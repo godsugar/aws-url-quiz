@@ -28,8 +28,8 @@ const Home: NextPage<HomeProps> = ({ questions }) => {
         <div style={{ marginBottom: '0.5rem', flexShrink: 0 }}>
           <h1 style={{ 
             fontSize: '1.8rem', 
-            color: '#4a90e2', 
-            textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)',
+            color: '#ffffff', 
+            textShadow: '2px 2px 4px rgba(0, 0, 0, 0.8)',
             marginBottom: '0.3rem',
             letterSpacing: '1px'
           }}>
@@ -43,7 +43,7 @@ const Home: NextPage<HomeProps> = ({ questions }) => {
             lineHeight: '1.3',
             textShadow: '1px 1px 2px rgba(0, 0, 0, 0.7)'
           }}>
-            AWSのドメインパターンに関する知識を試す<strong style={{ color: '#4a90e2' }}>ミリオネア風クイズ</strong>
+            AWSの各種サービスのドメインパターンやURLの知識を試すクイズです
           </p>
         </div>
         <Quiz questions={questions} />
