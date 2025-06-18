@@ -16,8 +16,16 @@ const Home: NextPage<HomeProps> = ({ questions }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', width: '100%' }}>
-        <div style={{ textAlign: 'center', marginBottom: '0.5rem', flexShrink: 0 }}>
+      <main style={{ 
+        flex: 1, 
+        display: 'flex', 
+        flexDirection: 'column', 
+        justifyContent: 'center', 
+        alignItems: 'center',
+        width: '100%',
+        textAlign: 'center'
+      }}>
+        <div style={{ marginBottom: '0.5rem', flexShrink: 0 }}>
           <h1 style={{ 
             fontSize: '1.8rem', 
             color: '#ffd700', 
@@ -32,7 +40,8 @@ const Home: NextPage<HomeProps> = ({ questions }) => {
             color: 'rgba(255, 255, 255, 0.9)', 
             maxWidth: '600px',
             margin: '0 auto',
-            lineHeight: '1.3'
+            lineHeight: '1.3',
+            textShadow: '1px 1px 2px rgba(0, 0, 0, 0.7)'
           }}>
             AWSのドメインパターンに関する知識を試す<strong style={{ color: '#ffd700' }}>ミリオネア風クイズ</strong>
           </p>
