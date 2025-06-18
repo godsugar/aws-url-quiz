@@ -16,33 +16,38 @@ const Home: NextPage<HomeProps> = ({ questions }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
-        <div style={{ textAlign: 'center', marginBottom: '1rem' }}>
+      <main style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', width: '100%' }}>
+        <div style={{ textAlign: 'center', marginBottom: '0.5rem', flexShrink: 0 }}>
           <h1 style={{ 
-            fontSize: '2.2rem', 
+            fontSize: '1.8rem', 
             color: '#ffd700', 
             textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)',
-            marginBottom: '0.5rem',
-            letterSpacing: '2px'
+            marginBottom: '0.3rem',
+            letterSpacing: '1px'
           }}>
             🏆 AWS ドメインパターンクイズ 🏆
           </h1>
           <p style={{ 
-            fontSize: '1rem', 
+            fontSize: '0.9rem', 
             color: 'rgba(255, 255, 255, 0.9)', 
-            maxWidth: '700px',
+            maxWidth: '600px',
             margin: '0 auto',
-            lineHeight: '1.4'
+            lineHeight: '1.3'
           }}>
-            AWSの各種サービスのドメインパターンに関する知識を試す<br />
-            <strong style={{ color: '#ffd700' }}>ミリオネア風クイズゲーム</strong>です。
+            AWSのドメインパターンに関する知識を試す<strong style={{ color: '#ffd700' }}>ミリオネア風クイズ</strong>
           </p>
         </div>
         <Quiz questions={questions} />
       </main>
 
-      <footer style={{ position: 'absolute', bottom: '10px', left: '50%', transform: 'translateX(-50%)' }}>
-        <p style={{ color: 'rgba(255, 255, 255, 0.5)', fontSize: '0.8rem' }}>
+      <footer style={{ 
+        position: 'absolute', 
+        bottom: '5px', 
+        left: '50%', 
+        transform: 'translateX(-50%)',
+        flexShrink: 0
+      }}>
+        <p style={{ color: 'rgba(255, 255, 255, 0.4)', fontSize: '0.7rem' }}>
           © {new Date().getFullYear()} AWS ドメインパターンクイズ
         </p>
       </footer>
