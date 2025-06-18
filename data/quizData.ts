@@ -584,30 +584,6 @@ export const quizQuestions: QuizQuestion[] = [
     explanation: "AWS CodePipelineのコンソールページは https://console.aws.amazon.com/codepipeline/ です。"
   },
   {
-    id: 46,
-    question: "Amazon GameLiftのコンソールページは？",
-    options: [
-      "https://console.aws.amazon.com/gamelift/",
-      "https://gamelift.aws.amazon.com/",
-      "https://console.aws.amazon.com/game-lift/",
-      "https://gaming.aws.amazon.com/"
-    ],
-    correctAnswer: 0,
-    explanation: "Amazon GameLiftのコンソールページは https://console.aws.amazon.com/gamelift/ です。"
-  },
-  {
-    id: 47,
-    question: "AWS Device Farmのコンソールページは？",
-    options: [
-      "https://console.aws.amazon.com/devicefarm/",
-      "https://devicefarm.aws.amazon.com/",
-      "https://console.aws.amazon.com/device-farm/",
-      "https://testing.aws.amazon.com/"
-    ],
-    correctAnswer: 0,
-    explanation: "AWS Device Farmのコンソールページは https://console.aws.amazon.com/devicefarm/ です。"
-  },
-  {
     id: 48,
     question: "Amazon Chime SDKのドキュメントページは？",
     options: [
@@ -618,18 +594,6 @@ export const quizQuestions: QuizQuestion[] = [
     ],
     correctAnswer: 2,
     explanation: "Amazon Chime SDKのドキュメントページは https://docs.aws.amazon.com/chime/ です。ChimeとChime SDKのドキュメントは同じセクションにあります。"
-  },
-  {
-    id: 49,
-    question: "AWS Well-Architected Toolのコンソールページは？",
-    options: [
-      "https://console.aws.amazon.com/wellarchitected/",
-      "https://wellarchitected.aws.amazon.com/",
-      "https://console.aws.amazon.com/well-architected/",
-      "https://architecture.aws.amazon.com/"
-    ],
-    correctAnswer: 0,
-    explanation: "AWS Well-Architected Toolのコンソールページは https://console.aws.amazon.com/wellarchitected/ です。"
   },
   {
     id: 50,
@@ -692,18 +656,6 @@ export const quizQuestions: QuizQuestion[] = [
     explanation: "Amazon Rekognitionのコンソールページは https://console.aws.amazon.com/rekognition/ です。"
   },
   {
-    id: 55,
-    question: "AWS Ground Stationのコンソールページは？",
-    options: [
-      "https://console.aws.amazon.com/groundstation/",
-      "https://groundstation.aws.amazon.com/",
-      "https://console.aws.amazon.com/ground-station/",
-      "https://satellite.aws.amazon.com/"
-    ],
-    correctAnswer: 0,
-    explanation: "AWS Ground Stationのコンソールページは https://console.aws.amazon.com/groundstation/ です。"
-  },
-  {
     id: 56,
     question: "Amazon Pollyのコンソールページは？",
     options: [
@@ -714,18 +666,6 @@ export const quizQuestions: QuizQuestion[] = [
     ],
     correctAnswer: 0,
     explanation: "Amazon Pollyのコンソールページは https://console.aws.amazon.com/polly/ です。"
-  },
-  {
-    id: 57,
-    question: "AWS Snowball「job-12345」の追跡ページは？",
-    options: [
-      "https://console.aws.amazon.com/snowball/",
-      "https://snowball.aws.amazon.com/job-12345",
-      "https://tracking.aws.amazon.com/snowball/job-12345",
-      "https://console.aws.amazon.com/snow/"
-    ],
-    correctAnswer: 0,
-    explanation: "AWS Snowballの追跡はコンソールページ https://console.aws.amazon.com/snowball/ で行います。個別のジョブ追跡も同じコンソール内で管理されます。"
   },
   {
     id: 58,
