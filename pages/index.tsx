@@ -2,6 +2,7 @@ import type { NextPage, GetStaticProps } from 'next';
 import Head from 'next/head';
 import Quiz from '../components/Quiz';
 import { quizQuestions, QuizQuestion } from '../data/quizData';
+import { GITHUB_URL } from '../utils/config';
 
 interface HomeProps {
   questions: QuizQuestion[];
@@ -50,15 +51,16 @@ const Home: NextPage<HomeProps> = ({ questions }) => {
         <Quiz questions={questions} />
       </main>
 
-      <footer style={{ 
-        position: 'absolute', 
-        bottom: '5px', 
-        left: '50%', 
-        transform: 'translateX(-50%)',
-        flexShrink: 0
-      }}>
-        <p style={{ color: 'rgba(255, 255, 255, 0.4)', fontSize: '0.7rem' }}>
-          © {new Date().getFullYear()} AWS ドメインパターンクイズ
+      <footer>
+        <p>
+          © {new Date().getFullYear()} AWS URLクイズ | 
+          <a 
+            href={GITHUB_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub
+          </a>
         </p>
       </footer>
     </div>

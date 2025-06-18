@@ -14,4 +14,16 @@ export const getAppUrl = (): string => {
   return 'https://godsugar.github.io/quiz-game-nextjs';
 };
 
+// GitHubリポジトリのURL設定
+export const getGitHubUrl = (): string => {
+  // 環境変数から取得
+  if (process.env.NEXT_PUBLIC_GITHUB_URL) {
+    return process.env.NEXT_PUBLIC_GITHUB_URL;
+  }
+  
+  // フォールバック
+  return 'https://github.com/godsugar/quiz-game-nextjs';
+};
+
 export const APP_URL = getAppUrl();
+export const GITHUB_URL = getGitHubUrl();
