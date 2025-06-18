@@ -1,52 +1,89 @@
-# AWS URLクイズ
+# 🏆 AWS URLクイズ
 
-AWSの各種サービスのURLパターンに関する知識を試すクイズアプリケーションです。
+AWSの各種サービスのURLに関する知識を試すクイズアプリケーションです。
 
-## 🎯 特徴
+## 🚀 ライブデモ
 
-- 60問以上の豊富な問題プール
-- 毎回10問をランダム選択
-- 詳細な解説と関連リンク
-- レスポンシブデザイン
-- X（Twitter）での結果共有機能
+**[AWS URLクイズをプレイする](https://godsugar.github.io/aws-url-quiz/)**
 
-## 🚀 デプロイ
+## 📚 構築ガイド
 
-このアプリケーションはGitHub Pagesに自動デプロイされます。
+このプロジェクトは **Amazon Q CLI** を使用して構築されました。詳細な構築過程は以下のWikiページで確認できます：
 
-### GitHub Pagesの設定
+### 📖 Wiki ページ
+- [🏠 ホーム - プロジェクト概要](../../wiki/Home)
+- [🚀 プロジェクト初期化](../../wiki/Project-Setup)
+- [🛠️ 技術スタック選定](../../wiki/Tech-Stack)
+- [🎨 UI/UX設計](../../wiki/UI-UX-Design)
+- [📝 問題データ作成](../../wiki/Quiz-Data)
+- [📱 レスポンシブ対応](../../wiki/Responsive-Design)
+- [🚢 デプロイメント](../../wiki/Deployment)
+- [🔧 トラブルシューティング](../../wiki/Troubleshooting)
 
-1. GitHubリポジトリの Settings > Pages に移動
-2. Source を "GitHub Actions" に設定
-3. mainブランチにプッシュすると自動的にデプロイされます
+## ✨ 主な機能
 
-### ローカル開発
+- 🎯 **ランダム10問選択**: 全52問からランダムに10問を出題
+- 🎨 **リッチUI**: AWS公式カラーを使用したモダンなデザイン
+- 📱 **レスポンシブ対応**: PC・タブレット・スマートフォンに最適化
+- 💡 **詳細解説**: 各問題に解説と参考リンクを提供
+- 🔄 **リアルタイム判定**: 即座に正解・不正解を表示
+- 📊 **結果表示**: スコアと正答率を大きく表示
+- 🐦 **SNS共有**: 結果をTwitterで共有可能
+
+## 🛠️ 技術スタック
+
+- **フレームワーク**: Next.js 15.3.3
+- **言語**: TypeScript
+- **スタイリング**: Custom CSS + CSS Modules
+- **デプロイ**: GitHub Pages
+- **CI/CD**: GitHub Actions
+- **開発支援**: Amazon Q CLI
+
+## 🚀 ローカル開発
 
 ```bash
-# 依存関係のインストール
+# リポジトリをクローン
+git clone https://github.com/godsugar/aws-url-quiz.git
+cd aws-url-quiz
+
+# 依存関係をインストール
 npm install
 
-# 開発サーバーの起動
+# 開発サーバーを起動
 npm run dev
-
-# ビルド
-npm run build
-
-# 静的ファイルのエクスポート
-npm run export
 ```
 
-## 🔧 技術スタック
+ブラウザで [http://localhost:3000](http://localhost:3000) を開いてください。
 
-- Next.js
-- TypeScript
-- React
-- CSS
+## 📊 プロジェクト統計
 
-## 📝 カスタマイズ
+- **問題数**: 52問
+- **開発期間**: 1日
+- **コミット数**: 20+
+- **対応デバイス**: PC・タブレット・スマートフォン
 
-クイズの問題を変更するには、`data/quizData.ts` ファイルを編集してください。
+## 🤖 Amazon Q CLI活用
 
-## ライセンス
+このプロジェクトでは、Amazon Q CLIを以下の用途で活用しました：
 
-MIT
+- ✅ プロジェクト初期化とセットアップ
+- ✅ TypeScript型定義の作成
+- ✅ React コンポーネントの実装
+- ✅ CSS アニメーションの実装
+- ✅ レスポンシブデザインの最適化
+- ✅ バグ修正とデバッグ
+- ✅ パフォーマンス最適化
+- ✅ デプロイメント設定
+
+## 📝 ライセンス
+
+MIT License
+
+## 👤 作成者
+
+**godsugar**
+- GitHub: [@godsugar](https://github.com/godsugar)
+
+---
+
+**🎯 [今すぐクイズに挑戦する！](https://godsugar.github.io/aws-url-quiz/)**
