@@ -131,7 +131,7 @@ const Quiz: React.FC<QuizProps> = ({ questions }) => {
         : score >= shuffledQuestions.length * 0.6 
         ? '👍 良い成績です！' 
         : '📚 もう少し学習が必要ですね。'
-    }\n\nあなたも挑戦してみませんか？\n${APP_URL}\n\n#AWS #クイズ #学習`;
+    }\n\nあなたも挑戦してみませんか？\n${APP_URL}\n\n#AmazonQCLI`;
     
     const shareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}`;
     
