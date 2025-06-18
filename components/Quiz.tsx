@@ -33,9 +33,7 @@ const Quiz: React.FC<QuizProps> = ({ questions }) => {
 
   // 初回マウント時と再開時に問題をシャッフル
   useEffect(() => {
-    console.log('Shuffling questions, shuffleKey:', shuffleKey); // デバッグ用
     const shuffled = shuffleArray(questions).slice(0, 10); // 10問をランダム選択
-    console.log('Selected questions:', shuffled.map(q => q.id)); // デバッグ用
     setShuffledQuestions(shuffled);
   }, [questions, shuffleKey, shuffleArray]);
 
@@ -83,7 +81,6 @@ const Quiz: React.FC<QuizProps> = ({ questions }) => {
     setTimeout(() => {
       setShuffleKey(prev => {
         const newKey = prev + 1;
-        console.log('Updated shuffleKey:', newKey); // デバッグ用
         return newKey;
       });
     }, 10);
