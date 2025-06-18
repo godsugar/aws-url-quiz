@@ -7,8 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "export": "next export",
-    "deploy": "npm run build && npm run export && touch out/.nojekyll"
+    "export": "next build && next export",
+    "deploy": "npm run export && touch out/.nojekyll"
   },
   "dependencies": {
     "next": "^12.3.4",

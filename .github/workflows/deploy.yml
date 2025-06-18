@@ -35,15 +35,12 @@ jobs:
         echo "Base path: /${{ github.event.repository.name }}"
         echo "GitHub URL: https://github.com/${{ github.repository }}"
 
-    - name: Build
-      run: npm run build
+    - name: Build and Export
+      run: npm run export
       env:
         NEXT_PUBLIC_APP_URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}
         NEXT_PUBLIC_BASE_PATH: /${{ github.event.repository.name }}
         NEXT_PUBLIC_GITHUB_URL: https://github.com/${{ github.repository }}
-
-    - name: Export static files
-      run: npm run export
 
     - name: List output directory
       run: ls -la out/
