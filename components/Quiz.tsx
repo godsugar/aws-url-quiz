@@ -137,7 +137,7 @@ const Quiz: React.FC<QuizProps> = ({ questions }) => {
     
     return (
       <div className="quiz-container">
-        <h2 className="title">🏆 クイズ終了！ 🏆</h2>
+        <h2 className="title" style={{ color: '#ffffff' }}>🏆 クイズ終了！ 🏆</h2>
         <div className="summary">
           <p style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>あなたのスコア: {score} / {shuffledQuestions.length}</p>
           <p style={{ fontSize: '1.3rem', marginBottom: '2rem' }}>正答率: {percentage}%</p>
@@ -214,14 +214,14 @@ const Quiz: React.FC<QuizProps> = ({ questions }) => {
         </div>
         
         <div className="controls">
-          <button
-            className="next-button"
-            onClick={() => setShowModal(true)}
-            disabled={selectedOption === null}
-            style={{ opacity: selectedOption === null ? 0.5 : 1 }}
-          >
-            解説を見る
-          </button>
+          {selectedOption !== null && (
+            <button
+              className="next-button"
+              onClick={() => setShowModal(true)}
+            >
+              解説を見る
+            </button>
+          )}
         </div>
       </div>
 
