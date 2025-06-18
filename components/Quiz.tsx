@@ -74,7 +74,7 @@ const Quiz: React.FC<QuizProps> = ({ questions }) => {
   return (
     <div className="quiz-container">
       <div className="question">
-        <div style={{ marginBottom: '1rem', fontSize: '1.2rem', color: '#ffd700' }}>
+        <div style={{ marginBottom: '1rem', fontSize: '1.2rem', color: '#4a90e2' }}>
           問題 {currentQuestionIndex + 1} / {questions.length}
         </div>
         {currentQuestion.question}

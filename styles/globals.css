@@ -6,8 +6,9 @@
   --error-color: #f44336;
   --light-bg: #f8f8f8;
   --millionaire-blue: #0066cc;
-  --millionaire-gold: #ffd700;
+  --millionaire-silver: #c0c0c0;
   --millionaire-dark: #001133;
+  --accent-color: #4a90e2;
 }
 
 * {
@@ -92,15 +93,13 @@ a {
 }
 
 .quiz-container {
-  background: rgba(0, 17, 51, 0.95);
+  background: #1a2332;
   border-radius: 20px;
   padding: 1rem;
   box-shadow: 
-    0 20px 40px rgba(0, 0, 0, 0.3),
-    0 0 0 1px rgba(255, 215, 0, 0.2),
-    inset 0 1px 0 rgba(255, 255, 255, 0.1);
-  border: 2px solid var(--millionaire-gold);
-  backdrop-filter: blur(10px);
+    0 20px 40px rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(192, 192, 192, 0.3);
+  border: 2px solid var(--millionaire-silver);
   max-width: 1000px;
   width: 100%;
   position: relative;
@@ -119,25 +118,25 @@ a {
   left: -2px;
   right: -2px;
   bottom: -2px;
-  background: linear-gradient(45deg, var(--millionaire-gold), var(--secondary-color), var(--millionaire-gold));
+  background: linear-gradient(45deg, var(--millionaire-silver), var(--accent-color), var(--millionaire-silver));
   border-radius: 22px;
   z-index: -1;
-  animation: borderGlow 3s ease-in-out infinite alternate;
+  animation: borderGlow 4s ease-in-out infinite alternate;
 }
 
 @keyframes borderGlow {
   0% {
-    opacity: 0.5;
+    opacity: 0.3;
   }
   100% {
-    opacity: 1;
+    opacity: 0.6;
   }
 }
 
 .title {
   text-align: center;
   margin-bottom: 0.8rem;
-  color: var(--millionaire-gold);
+  color: var(--accent-color);
   font-size: 1.5rem;
   font-weight: bold;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
@@ -150,14 +149,13 @@ a {
   margin-bottom: 1rem;
   color: var(--text-color);
   text-align: center;
-  background: rgba(0, 102, 204, 0.4);
+  background: #2a3441;
   padding: 0.8rem;
   border-radius: 15px;
-  border: 1px solid rgba(255, 215, 0, 0.3);
+  border: 1px solid rgba(192, 192, 192, 0.3);
   line-height: 1.3;
   font-weight: 500;
   flex-shrink: 0;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
 }
 
 .options {
@@ -170,9 +168,9 @@ a {
 
 .option-button {
   padding: 0.8rem;
-  border: 2px solid var(--millionaire-gold);
+  border: 2px solid var(--millionaire-silver);
   border-radius: 15px;
-  background: linear-gradient(135deg, rgba(0, 17, 51, 0.9), rgba(0, 102, 204, 0.5));
+  background: linear-gradient(135deg, #2a3441, #1e2832);
   font-size: 0.85rem;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -193,7 +191,7 @@ a {
 .option-label {
   margin-right: 0.8rem;
   font-weight: bold;
-  color: #ffd700;
+  color: var(--accent-color);
   font-size: 1rem;
   flex-shrink: 0;
 }
@@ -219,33 +217,33 @@ a {
 }
 
 .option-button:hover {
-  background: linear-gradient(135deg, rgba(0, 102, 204, 0.4), rgba(255, 153, 0, 0.3));
-  border-color: var(--text-color);
+  background: linear-gradient(135deg, #3a4451, #2e3a42);
+  border-color: var(--accent-color);
   transform: translateY(-2px);
-  box-shadow: 0 10px 20px rgba(255, 215, 0, 0.2);
+  box-shadow: 0 10px 20px rgba(74, 144, 226, 0.2);
 }
 
 .option-button.correct {
-  background: linear-gradient(135deg, rgba(76, 175, 80, 0.9), rgba(76, 175, 80, 0.6));
+  background: linear-gradient(135deg, #4caf50, #388e3c);
   border-color: var(--success-color);
   animation: correctPulse 1s ease-in-out;
 }
 
 .option-button.correct .option-text {
   color: #ffffff;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
   font-weight: 600;
 }
 
 .option-button.incorrect {
-  background: linear-gradient(135deg, rgba(244, 67, 54, 0.9), rgba(244, 67, 54, 0.6));
+  background: linear-gradient(135deg, #f44336, #d32f2f);
   border-color: var(--error-color);
   animation: incorrectShake 0.5s ease-in-out;
 }
 
 .option-button.incorrect .option-text {
   color: #ffffff;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
   font-weight: 600;
 }
 
@@ -280,33 +278,30 @@ a {
 }
 
 .result.correct {
-  background: rgba(76, 175, 80, 0.4);
+  background: #4caf50;
   color: #ffffff;
   border: 1px solid var(--success-color);
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
 }
 
 .result.incorrect {
-  background: rgba(244, 67, 54, 0.4);
+  background: #f44336;
   color: #ffffff;
   border: 1px solid var(--error-color);
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
 }
 
 .explanation {
   font-weight: normal;
   margin-top: 0.6rem;
   font-size: 0.8rem;
-  color: rgba(255, 255, 255, 0.95);
+  color: #ffffff;
   text-align: left;
-  background: rgba(255, 153, 0, 0.3);
+  background: #3a4451;
   padding: 0.6rem;
   border-radius: 10px;
-  border-left: 4px solid var(--secondary-color);
+  border-left: 4px solid var(--accent-color);
   line-height: 1.3;
   max-height: 80px;
   overflow-y: auto;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
 }
 
 .controls {
@@ -319,8 +314,8 @@ a {
 
 .next-button {
   padding: 1rem 2rem;
-  background: linear-gradient(135deg, var(--millionaire-gold), #ffb300);
-  color: var(--millionaire-dark);
+  background: linear-gradient(135deg, var(--accent-color), #357abd);
+  color: white;
   border: none;
   border-radius: 25px;
   font-size: 1.1rem;
@@ -329,13 +324,13 @@ a {
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 1px;
-  box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+  box-shadow: 0 5px 15px rgba(74, 144, 226, 0.3);
 }
 
 .next-button:hover {
-  background: linear-gradient(135deg, #ffb300, var(--millionaire-gold));
+  background: linear-gradient(135deg, #357abd, var(--accent-color));
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4);
+  box-shadow: 0 8px 25px rgba(74, 144, 226, 0.4);
 }
 
 .next-button:disabled {
@@ -349,7 +344,7 @@ a {
 .score {
   font-size: 1.4rem;
   font-weight: bold;
-  color: var(--millionaire-gold);
+  color: var(--accent-color);
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
@@ -381,17 +376,17 @@ a {
 }
 
 .perfect-score {
-  color: var(--millionaire-gold);
+  color: var(--accent-color);
   font-weight: bold;
   margin: 1rem 0;
   font-size: 1.4rem;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-  animation: goldGlow 2s ease-in-out infinite alternate;
+  animation: blueGlow 2s ease-in-out infinite alternate;
 }
 
-@keyframes goldGlow {
+@keyframes blueGlow {
   0% { text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); }
-  100% { text-shadow: 0 0 20px rgba(255, 215, 0, 0.8), 1px 1px 2px rgba(0, 0, 0, 0.5); }
+  100% { text-shadow: 0 0 20px rgba(74, 144, 226, 0.8), 1px 1px 2px rgba(0, 0, 0, 0.5); }
 }
 
 .good-score {
