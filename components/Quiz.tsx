@@ -43,21 +43,25 @@ const Quiz: React.FC<QuizProps> = ({ questions }) => {
     setQuizCompleted(false);
   };
 
+  // オプションのラベル（A, B, C, D）
+  const optionLabels = ['A', 'B', 'C', 'D'];
+
   if (quizCompleted) {
+    const percentage = Math.round((score / questions.length) * 100);
     return (
       <div className="quiz-container">
-        <h2 className="title">クイズ終了！</h2>
+        <h2 className="title">🏆 クイズ終了！ 🏆</h2>
         <div className="summary">
-          <p>あなたのスコア: {score} / {questions.length}</p>
-          <p>正答率: {Math.round((score / questions.length) * 100)}%</p>
+          <p style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>あなたのスコア: {score} / {questions.length}</p>
+          <p style={{ fontSize: '1.3rem', marginBottom: '2rem' }}>正答率: {percentage}%</p>
           {score === questions.length ? (
-            <p className="perfect-score">満点おめでとうございます！AWSドメインパターンの達人です！</p>
+            <p className="perfect-score">🎉 満点おめでとうございます！ 🎉<br />AWSドメインパターンの達人です！</p>
           ) : score >= questions.length * 0.8 ? (
-            <p className="good-score">素晴らしい成績です！AWSのドメインパターンについてよく理解しています！</p>
+            <p className="good-score">✨ 素晴らしい成績です！<br />AWSのドメインパターンについてよく理解しています！</p>
           ) : score >= questions.length * 0.6 ? (
-            <p className="average-score">良い成績です。もう少しAWSのドメインパターンについて学びましょう！</p>
+            <p className="average-score">👍 良い成績です！<br />もう少しAWSのドメインパターンについて学びましょう！</p>
           ) : (
-            <p className="low-score">AWSのドメインパターンについてもう少し学習しましょう。</p>
+            <p className="low-score">📚 AWSのドメインパターンについて<br />もう少し学習しましょう。</p>
           )}
           <button className="restart-button" onClick={restartQuiz}>
             もう一度挑戦する
@@ -69,10 +73,13 @@ const Quiz: React.FC<QuizProps> = ({ questions }) => {
 
   return (
     <div className="quiz-container">
-      <h2 className="title">AWSドメインパターンクイズ</h2>
-      <p className="question">
-        問題 {currentQuestionIndex + 1}/{questions.length}: {currentQuestion.question}
-      </p>
+      <h2 className="title">AWS ドメインパターンクイズ</h2>
+      <div className="question">
+        <div style={{ marginBottom: '1rem', fontSize: '1.2rem', color: '#ffd700' }}>
+          問題 {currentQuestionIndex + 1} / {questions.length}
+        </div>
+        {currentQuestion.question}
+      </div>
       <div className="options">
         {currentQuestion.options.map((option, index) => (
           <button
@@ -87,6 +94,14 @@ const Quiz: React.FC<QuizProps> = ({ questions }) => {
             onClick={() => handleOptionClick(index)}
             disabled={selectedOption !== null}
           >
+            <span style={{ 
+              marginRight: '1rem', 
+              fontWeight: 'bold', 
+              color: '#ffd700',
+              fontSize: '1.2rem'
+            }}>
+              {optionLabels[index]}:
+            </span>
             {option}
           </button>
         ))}
@@ -98,23 +113,26 @@ const Quiz: React.FC<QuizProps> = ({ questions }) => {
           }`}
         >
           {selectedOption === currentQuestion.correctAnswer
-            ? '正解！'
-            : `不正解！正解は「${
+            ? '🎉 正解！'
+            : `❌ 不正解！正解は「${optionLabels[currentQuestion.correctAnswer]}: ${
                 currentQuestion.options[currentQuestion.correctAnswer]
               }」です。`}
           {currentQuestion.explanation && (
-            <p className="explanation">{currentQuestion.explanation}</p>
+            <div className="explanation">
+              <strong>💡 解説:</strong><br />
+              {currentQuestion.explanation}
+            </div>
           )}
         </div>
       )}
       <div className="controls">
-        <div className="score">スコア: {score}</div>
+        <div className="score">💰 スコア: {score}</div>
         <button
           className="next-button"
           onClick={handleNextQuestion}
           disabled={selectedOption === null}
         >
-          {currentQuestionIndex < questions.length - 1 ? '次の問題' : '結果を見る'}
+          {currentQuestionIndex < questions.length - 1 ? '次の問題へ' : '結果を見る'}
         </button>
       </div>
     </div>
