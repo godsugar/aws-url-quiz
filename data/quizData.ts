@@ -366,5 +366,125 @@ export const quizQuestions: QuizQuestion[] = [
     ],
     correctAnswer: 0,
     explanation: "AWS Eventのウェブサイトは https://aws.amazon.com/events/ です。イベント情報も通常のサービス紹介ページと同じパターンに従っています。"
+  },
+  {
+    id: 31,
+    question: "Amazon CloudFrontで配信するウェブサイトのデフォルトドメインは？",
+    options: [
+      "example.cloudfront.net",
+      "example.cloudfront.aws",
+      "example.cloudfront.amazon.com",
+      "example.cdn.amazonaws.com"
+    ],
+    correctAnswer: 0,
+    explanation: "Amazon CloudFrontで配信するウェブサイトのデフォルトドメインは [ディストリビューションID].cloudfront.net の形式です。このドメインは独自ドメインにCNAMEで置き換えることができます。"
+  },
+  {
+    id: 32,
+    question: "Amazon S3で静的ウェブサイトホスティングを使用する場合のデフォルトURLは？",
+    options: [
+      "bucket-name.s3.amazonaws.com",
+      "bucket-name.s3-website-region.amazonaws.com",
+      "bucket-name.s3.region.amazonaws.com",
+      "bucket-name.static.amazonaws.com"
+    ],
+    correctAnswer: 1,
+    explanation: "Amazon S3の静的ウェブサイトホスティングを使用する場合のデフォルトURLは bucket-name.s3-website-region.amazonaws.com または bucket-name.s3-website.region.amazonaws.com の形式です。これは通常のS3オブジェクトアクセスURL（bucket-name.s3.amazonaws.com）とは異なります。"
+  },
+  {
+    id: 33,
+    question: "AWS Amplifyでホストされるウェブアプリのデフォルトドメインは？",
+    options: [
+      "branch-name.app-id.amplify.aws",
+      "branch-name.app-id.amplifyapp.com",
+      "app-id.amplify.amazonaws.com",
+      "branch-name.amplify.amazon.com"
+    ],
+    correctAnswer: 1,
+    explanation: "AWS Amplifyでホストされるウェブアプリのデフォルトドメインは branch-name.app-id.amplifyapp.com の形式です。Amplifyでは、カスタムドメインを設定することも可能です。"
+  },
+  {
+    id: 34,
+    question: "Amazon API Gatewayで作成したAPIのデフォルトエンドポイントURLは？",
+    options: [
+      "api-id.execute-api.region.amazonaws.com",
+      "api-id.apigateway.region.amazonaws.com",
+      "api-id.api.aws.amazon.com",
+      "api-id.gateway.region.aws"
+    ],
+    correctAnswer: 0,
+    explanation: "Amazon API Gatewayで作成したAPIのデフォルトエンドポイントURLは api-id.execute-api.region.amazonaws.com の形式です。API Gatewayではカスタムドメイン名を設定することも可能です。"
+  },
+  {
+    id: 35,
+    question: "AWS Elastic Beanstalkアプリケーションのデフォルトドメインは？",
+    options: [
+      "environment-name.elasticbeanstalk.com",
+      "environment-name.region.elasticbeanstalk.com",
+      "environment-name.eb.amazonaws.com",
+      "app-name.elasticbeanstalk.region.amazonaws.com"
+    ],
+    correctAnswer: 1,
+    explanation: "AWS Elastic Beanstalkアプリケーションのデフォルトドメインは environment-name.region.elasticbeanstalk.com の形式です。Elastic Beanstalkでは、Route 53などを使用してカスタムドメインを設定することができます。"
+  },
+  {
+    id: 36,
+    question: "Amazon AppRunnerサービスのデフォルトドメインは？",
+    options: [
+      "service-id.apprunner.aws",
+      "service-id.apprunner.amazon.com",
+      "service-id.run.aws.amazon.com",
+      "service-id.awsapprunner.com"
+    ],
+    correctAnswer: 3,
+    explanation: "Amazon AppRunnerサービスのデフォルトドメインは service-id.awsapprunner.com の形式です。AppRunnerでもカスタムドメインを設定することが可能です。"
+  },
+  {
+    id: 37,
+    question: "AWS App Runnerサービスのカスタムドメインを設定するには、どのAWSサービスを使用しますか？",
+    options: [
+      "AWS Certificate Manager (ACM)のみ",
+      "Amazon Route 53のみ",
+      "AWS Certificate Manager (ACM)とAmazon Route 53の両方",
+      "AWS CloudFront"
+    ],
+    correctAnswer: 2,
+    explanation: "AWS App Runnerサービスにカスタムドメインを設定するには、通常AWS Certificate Manager (ACM)で証明書を発行し、Amazon Route 53でDNSレコードを設定します。両方のサービスを組み合わせて使用することで、安全なカスタムドメイン設定が可能になります。"
+  },
+  {
+    id: 38,
+    question: "Amazon LightsailのWordPressインスタンスのデフォルトドメインは？",
+    options: [
+      "instance-name.lightsail.aws",
+      "instance-name.lightsailapp.com",
+      "instance-name.region.lightsail.amazonaws.com",
+      "instance-public-ip.ip.aws.amazon.com"
+    ],
+    correctAnswer: 1,
+    explanation: "Amazon LightsailのWordPressインスタンスのデフォルトドメインは instance-name.lightsailapp.com の形式です。Lightsailでは、静的IPを割り当てたり、独自ドメインを設定したりすることも可能です。"
+  },
+  {
+    id: 39,
+    question: "AWS Amplify Hostingで独自ドメインを設定する際に必要なAWSサービスは？",
+    options: [
+      "Amazon Route 53のみ",
+      "AWS Certificate Manager (ACM)のみ",
+      "Amazon Route 53とAWS Certificate Manager (ACM)",
+      "AWS CloudFrontとAmazon S3"
+    ],
+    correctAnswer: 2,
+    explanation: "AWS Amplify Hostingで独自ドメインを設定するには、通常Amazon Route 53でドメインを管理し、AWS Certificate Manager (ACM)でSSL/TLS証明書を発行します。Amplifyコンソールからこれらのサービスと連携して設定を行います。"
+  },
+  {
+    id: 40,
+    question: "Amazon Cognito User Poolのホストされたログインページのデフォルトドメインは？",
+    options: [
+      "auth.region.amazoncognito.com",
+      "domain-prefix.auth.region.amazoncognito.com",
+      "cognito-idp.region.amazonaws.com",
+      "auth.cognito.region.aws.amazon.com"
+    ],
+    correctAnswer: 1,
+    explanation: "Amazon Cognito User Poolのホストされたログインページのデフォルトドメインは domain-prefix.auth.region.amazoncognito.com の形式です。Cognitoでは、独自ドメインを設定することも可能です。"
   }
 ];
