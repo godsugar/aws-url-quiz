@@ -126,5 +126,245 @@ export const quizQuestions: QuizQuestion[] = [
     ],
     correctAnswer: 2,
     explanation: "Amazon CloudWatchのコンソールURLは https://console.aws.amazon.com/cloudwatch/ です。"
+  },
+  {
+    id: 11,
+    question: "AWS Step Functionsのサービス紹介ページは？",
+    options: [
+      "https://aws.amazon.com/step-functions/",
+      "https://stepfunctions.aws.amazon.com/",
+      "https://amazon.com/step-functions/",
+      "https://step-functions.amazon.com/"
+    ],
+    correctAnswer: 0,
+    explanation: "AWS Step Functionsのサービス紹介ページは https://aws.amazon.com/step-functions/ です。ハイフンを含むサービス名も同様のパターンで、aws.amazon.com/[サービス名]/ の形式になります。"
+  },
+  {
+    id: 12,
+    question: "Amazon EKS (Elastic Kubernetes Service) のコンソールURLは？",
+    options: [
+      "https://eks.amazon.com/",
+      "https://aws.amazon.com/eks/console/",
+      "https://console.aws.amazon.com/eks/",
+      "https://kubernetes.aws.amazon.com/"
+    ],
+    correctAnswer: 2,
+    explanation: "Amazon EKSのコンソールURLは https://console.aws.amazon.com/eks/ です。他のAWSサービスと同様に、コンソールは console.aws.amazon.com/[サービス名]/ の形式です。"
+  },
+  {
+    id: 13,
+    question: "AWS Secrets Managerのサービス紹介ページは？",
+    options: [
+      "https://aws.amazon.com/secrets-manager/",
+      "https://secrets-manager.aws.amazon.com/",
+      "https://amazon.com/secrets-manager/",
+      "https://aws.amazon.com/secretsmanager/"
+    ],
+    correctAnswer: 3,
+    explanation: "AWS Secrets Managerのサービス紹介ページは https://aws.amazon.com/secretsmanager/ です。一部のサービスでは、URLにハイフンが含まれないことがあります。"
+  },
+  {
+    id: 14,
+    question: "AWS Management Consoleのメインページは？",
+    options: [
+      "https://aws.amazon.com/console/",
+      "https://console.aws.amazon.com/",
+      "https://management.aws.amazon.com/",
+      "https://amazon.com/aws-console/"
+    ],
+    correctAnswer: 1,
+    explanation: "AWS Management Consoleのメインページは https://console.aws.amazon.com/ です。ここからすべてのAWSサービスのコンソールにアクセスできます。"
+  },
+  {
+    id: 15,
+    question: "Amazon SageMakerのコンソールURLは？",
+    options: [
+      "https://sagemaker.amazon.com/",
+      "https://aws.amazon.com/sagemaker/console/",
+      "https://console.aws.amazon.com/sagemaker/",
+      "https://ml.aws.amazon.com/sagemaker/"
+    ],
+    correctAnswer: 2,
+    explanation: "Amazon SageMakerのコンソールURLは https://console.aws.amazon.com/sagemaker/ です。機械学習サービスも他のAWSサービスと同様のURLパターンに従っています。"
+  },
+  {
+    id: 16,
+    question: "AWS Billing and Cost Managementのコンソールページは？",
+    options: [
+      "https://billing.amazon.com/",
+      "https://console.aws.amazon.com/billing/",
+      "https://aws.amazon.com/billing/",
+      "https://console.aws.amazon.com/cost-management/"
+    ],
+    correctAnswer: 1,
+    explanation: "AWS Billing and Cost Managementのコンソールページは https://console.aws.amazon.com/billing/ です。請求関連のサービスも同様のパターンに従っています。"
+  },
+  {
+    id: 17,
+    question: "AWS Elastic Beanstalkのサービス紹介ページは？",
+    options: [
+      "https://aws.amazon.com/elasticbeanstalk/",
+      "https://elasticbeanstalk.aws.amazon.com/",
+      "https://aws.amazon.com/elastic-beanstalk/",
+      "https://beanstalk.amazon.com/"
+    ],
+    correctAnswer: 0,
+    explanation: "AWS Elastic Beanstalkのサービス紹介ページは https://aws.amazon.com/elasticbeanstalk/ です。このサービスはURLにハイフンを含まず、単語がつながっています。"
+  },
+  {
+    id: 18,
+    question: "Amazon API Gatewayのコンソールページは？",
+    options: [
+      "https://apigateway.amazon.com/",
+      "https://console.aws.amazon.com/apigateway/",
+      "https://aws.amazon.com/api-gateway/console/",
+      "https://console.aws.amazon.com/api-gateway/"
+    ],
+    correctAnswer: 1,
+    explanation: "Amazon API Gatewayのコンソールページは https://console.aws.amazon.com/apigateway/ です。コンソールURLでは、サービス名のハイフンが省略されることがあります。"
+  },
+  {
+    id: 19,
+    question: "AWS Documentationのメインページは？",
+    options: [
+      "https://aws.amazon.com/documentation/",
+      "https://docs.aws.amazon.com/",
+      "https://documentation.aws.amazon.com/",
+      "https://amazon.com/aws-docs/"
+    ],
+    correctAnswer: 1,
+    explanation: "AWS Documentationのメインページは https://docs.aws.amazon.com/ です。ドキュメントは独自のサブドメイン（docs）を使用しています。"
+  },
+  {
+    id: 20,
+    question: "AWS Trainingのウェブサイトは？",
+    options: [
+      "https://aws.amazon.com/training/",
+      "https://training.aws.amazon.com/",
+      "https://aws.training/",
+      "https://amazon.com/aws-training/"
+    ],
+    correctAnswer: 2,
+    explanation: "AWS Trainingのウェブサイトは https://aws.training/ です。トレーニングサイトは独自のドメイン（aws.training）を使用しています。"
+  },
+  {
+    id: 21,
+    question: "Amazon ECR (Elastic Container Registry) のコンソールURLは？",
+    options: [
+      "https://ecr.amazon.com/",
+      "https://console.aws.amazon.com/ecr/",
+      "https://aws.amazon.com/ecr/console/",
+      "https://containers.aws.amazon.com/"
+    ],
+    correctAnswer: 1,
+    explanation: "Amazon ECRのコンソールURLは https://console.aws.amazon.com/ecr/ です。コンテナサービスも同様のパターンに従っています。"
+  },
+  {
+    id: 22,
+    question: "AWS Certificationのウェブサイトは？",
+    options: [
+      "https://aws.amazon.com/certification/",
+      "https://certification.aws.amazon.com/",
+      "https://aws.certification.com/",
+      "https://amazon.com/aws-certification/"
+    ],
+    correctAnswer: 0,
+    explanation: "AWS Certificationのウェブサイトは https://aws.amazon.com/certification/ です。認定プログラムは通常のサービス紹介ページと同じパターンに従っています。"
+  },
+  {
+    id: 23,
+    question: "AWS CloudShellのアクセスURLは？",
+    options: [
+      "https://cloudshell.aws.amazon.com/",
+      "https://console.aws.amazon.com/cloudshell/",
+      "https://shell.aws.amazon.com/",
+      "https://aws.amazon.com/cloudshell/console/"
+    ],
+    correctAnswer: 1,
+    explanation: "AWS CloudShellのアクセスURLは https://console.aws.amazon.com/cloudshell/ です。CloudShellもコンソールの一部として同じパターンに従っています。"
+  },
+  {
+    id: 24,
+    question: "AWS Partner Networkのウェブサイトは？",
+    options: [
+      "https://aws.amazon.com/partners/",
+      "https://partners.aws.amazon.com/",
+      "https://aws.partners/",
+      "https://partner-network.aws.amazon.com/"
+    ],
+    correctAnswer: 0,
+    explanation: "AWS Partner Networkのウェブサイトは https://aws.amazon.com/partners/ です。パートナープログラムも通常のサービス紹介ページと同じパターンに従っています。"
+  },
+  {
+    id: 25,
+    question: "AWS Pricing Calculatorのウェブサイトは？",
+    options: [
+      "https://aws.amazon.com/pricing-calculator/",
+      "https://calculator.aws.amazon.com/",
+      "https://calculator.aws/",
+      "https://pricing.aws.amazon.com/"
+    ],
+    correctAnswer: 2,
+    explanation: "AWS Pricing Calculatorのウェブサイトは https://calculator.aws/ です。料金計算ツールは独自のドメイン（calculator.aws）を使用しています。"
+  },
+  {
+    id: 26,
+    question: "Amazon Cognito のコンソールURLは？",
+    options: [
+      "https://cognito.amazon.com/",
+      "https://console.aws.amazon.com/cognito/",
+      "https://aws.amazon.com/cognito/console/",
+      "https://identity.aws.amazon.com/"
+    ],
+    correctAnswer: 1,
+    explanation: "Amazon Cognito のコンソールURLは https://console.aws.amazon.com/cognito/ です。認証サービスも同様のパターンに従っています。"
+  },
+  {
+    id: 27,
+    question: "AWS Glueのサービス紹介ページは？",
+    options: [
+      "https://aws.amazon.com/glue/",
+      "https://glue.aws.amazon.com/",
+      "https://amazon.com/glue/",
+      "https://data.aws.amazon.com/glue/"
+    ],
+    correctAnswer: 0,
+    explanation: "AWS Glueのサービス紹介ページは https://aws.amazon.com/glue/ です。データ統合サービスも通常のサービス紹介ページと同じパターンに従っています。"
+  },
+  {
+    id: 28,
+    question: "AWS Consoleのモバイルアプリ紹介ページは？",
+    options: [
+      "https://aws.amazon.com/console/mobile/",
+      "https://mobile.aws.amazon.com/",
+      "https://aws.amazon.com/mobile-app/",
+      "https://console.aws.amazon.com/mobile/"
+    ],
+    correctAnswer: 2,
+    explanation: "AWS Consoleのモバイルアプリ紹介ページは https://aws.amazon.com/mobile-app/ です。モバイルアプリの紹介ページは通常と少し異なるパターンを使用しています。"
+  },
+  {
+    id: 29,
+    question: "AWS Supportのウェブサイトは？",
+    options: [
+      "https://aws.amazon.com/support/",
+      "https://support.aws.amazon.com/",
+      "https://console.aws.amazon.com/support/",
+      "https://amazon.com/aws-support/"
+    ],
+    correctAnswer: 0,
+    explanation: "AWS Supportのウェブサイトは https://aws.amazon.com/support/ です。サポートサービスの紹介ページは通常のパターンに従っています。一方、サポートセンターへのアクセスは https://console.aws.amazon.com/support/ になります。"
+  },
+  {
+    id: 30,
+    question: "AWS Eventのウェブサイトは？",
+    options: [
+      "https://aws.amazon.com/events/",
+      "https://events.aws.amazon.com/",
+      "https://aws.events/",
+      "https://amazon.com/aws-events/"
+    ],
+    correctAnswer: 0,
+    explanation: "AWS Eventのウェブサイトは https://aws.amazon.com/events/ です。イベント情報も通常のサービス紹介ページと同じパターンに従っています。"
   }
 ];
