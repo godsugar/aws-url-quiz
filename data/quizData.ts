@@ -247,7 +247,7 @@ export const quizQuestions: QuizQuestion[] = [
       "http://myapp-dev.us-west-2.elasticbeanstalk.com"
     ],
     correctAnswer: 3,
-    explanation: "Elastic BeanstalkのデフォルトURLは http://[環境名].[リージョン].elasticbeanstalk.com の形式です。環境名は通常、アプリケーション名とステージ名を組み合わせたものになります。"
+    explanation: "Elastic BeanstalkのデフォルトURLは http://[環境名].[リージョン].elasticbeanstalk.com の形式です。HTTPSではなくHTTPがデフォルトです。"
   },
   {
     id: 21,
@@ -390,8 +390,8 @@ export const quizQuestions: QuizQuestion[] = [
       "https://eventbridge.aws.amazon.com/",
       "https://events.amazon.com/"
     ],
-    correctAnswer: 1,
-    explanation: "Amazon EventBridgeのコンソールページは https://console.aws.amazon.com/events/ です。EventBridgeは以前のCloudWatch Eventsの後継サービスです。"
+    correctAnswer: 0,
+    explanation: "Amazon EventBridgeのコンソールページは https://console.aws.amazon.com/eventbridge/ です。以前は /events/ でしたが、現在は /eventbridge/ に変更されています。"
   },
   {
     id: 33,
@@ -455,15 +455,15 @@ export const quizQuestions: QuizQuestion[] = [
   },
   {
     id: 38,
-    question: "Amazon SNSトピック「notifications」のARNは？（アカウントID：123456789012、リージョン：eu-central-1）",
+    question: "Amazon SNSのAPIエンドポイントは？（リージョン：eu-central-1）",
     options: [
-      "arn:aws:sns:eu-central-1:123456789012:notifications",
-      "https://sns.eu-central-1.amazonaws.com/123456789012/notifications",
-      "sns://eu-central-1.amazonaws.com/123456789012/notifications",
-      "https://notifications.sns.eu-central-1.amazonaws.com"
+      "https://sns.eu-central-1.amazonaws.com",
+      "https://eu-central-1.sns.amazonaws.com",
+      "https://notifications.eu-central-1.amazonaws.com",
+      "https://messaging.eu-central-1.amazonaws.com"
     ],
     correctAnswer: 0,
-    explanation: "Amazon SNSトピックのARNは arn:aws:sns:[リージョン]:[アカウントID]:[トピック名] の形式です。これはURLではなくAmazon Resource Name（ARN）です。"
+    explanation: "Amazon SNSのAPIエンドポイントは https://sns.[リージョン].amazonaws.com の形式です。"
   },
   {
     id: 39,
@@ -582,8 +582,8 @@ export const quizQuestions: QuizQuestion[] = [
       "https://docs.aws.amazon.com/chime/",
       "https://sdk.chime.aws.amazon.com/"
     ],
-    correctAnswer: 0,
-    explanation: "Amazon Chime SDKのドキュメントページは https://docs.aws.amazon.com/chime-sdk/ です。AWSドキュメントは docs.aws.amazon.com ドメインを使用します。"
+    correctAnswer: 2,
+    explanation: "Amazon Chime SDKのドキュメントページは https://docs.aws.amazon.com/chime/ です。ChimeとChime SDKのドキュメントは同じセクションにあります。"
   },
   {
     id: 49,
