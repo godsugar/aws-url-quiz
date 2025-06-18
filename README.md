@@ -19,6 +19,7 @@ AWSの各種サービスのURLに関する知識を試すクイズアプリケ�
 - [📱 レスポンシブ対応](../../wiki/Responsive-Design)
 - [🚢 デプロイメント](../../wiki/Deployment)
 - [🔧 トラブルシューティング](../../wiki/Troubleshooting)
+- [🤖 Amazon Q CLI活用ポイント](../../wiki/Amazon-Q-CLI-Usage) ⭐ **NEW**
 
 ## ✨ 主な機能
 
