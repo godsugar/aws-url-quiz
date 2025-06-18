@@ -422,8 +422,14 @@ export const quizQuestions: QuizQuestion[] = [
       "https://ssm.aws.amazon.com/",
       "https://systems-manager.amazon.com/"
     ],
-    correctAnswer: 1,
-    explanation: "AWS Systems ManagerのコンソールページはSSMの略称を使用して https://console.aws.amazon.com/ssm/ です。"
+    correctAnswer: 0,
+    explanation: "AWS Systems ManagerのコンソールページはフルネームのURLを使用して https://console.aws.amazon.com/systems-manager/ です。SSMは略称ですが、URLでは使用されません。",
+    links: [
+      {
+        text: "AWS Systems Manager コンソール",
+        url: "https://console.aws.amazon.com/systems-manager/"
+      }
+    ]
   },
   {
     id: 32,
