@@ -11,7 +11,7 @@ export const getAppUrl = (): string => {
   }
   
   // フォールバック（本番環境でも環境変数が設定されていない場合）
-  return 'https://godsugar.github.io/quiz-game-nextjs';
+  return 'https://godsugar.github.io/aws-url-quiz';
 };
 
 // GitHubリポジトリのURL設定
@@ -22,7 +22,7 @@ export const getGitHubUrl = (): string => {
   }
   
   // フォールバック
-  return 'https://github.com/godsugar/quiz-game-nextjs';
+  return 'https://github.com/godsugar/aws-url-quiz';
 };
 
 export const APP_URL = getAppUrl();
