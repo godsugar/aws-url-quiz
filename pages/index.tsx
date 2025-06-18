@@ -20,27 +20,28 @@ const Home: NextPage<HomeProps> = ({ questions }) => {
         flex: 1, 
         display: 'flex', 
         flexDirection: 'column', 
-        justifyContent: 'center', 
+        justifyContent: 'flex-start',
         alignItems: 'center',
         width: '100%',
-        textAlign: 'center'
+        textAlign: 'center',
+        paddingTop: '1rem'
       }}>
-        <div style={{ marginBottom: '0.5rem', flexShrink: 0 }}>
+        <div style={{ marginBottom: '1rem', flexShrink: 0 }}>
           <h1 style={{ 
-            fontSize: '1.8rem', 
+            fontSize: '1.5rem', 
             color: '#ffffff', 
             textShadow: '2px 2px 4px rgba(0, 0, 0, 0.8)',
-            marginBottom: '0.3rem',
+            marginBottom: '0.5rem',
             letterSpacing: '1px'
           }}>
             🏆 AWS ドメインパターンクイズ 🏆
           </h1>
           <p style={{ 
-            fontSize: '0.9rem', 
+            fontSize: '0.8rem', 
             color: 'rgba(255, 255, 255, 0.9)', 
-            maxWidth: '600px',
+            maxWidth: '500px',
             margin: '0 auto',
-            lineHeight: '1.3',
+            lineHeight: '1.2',
             textShadow: '1px 1px 2px rgba(0, 0, 0, 0.7)'
           }}>
             AWSの各種サービスのドメインパターンやURLの知識を試すクイズです
