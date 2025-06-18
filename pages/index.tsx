@@ -50,18 +50,18 @@ const Home: NextPage<HomeProps> = ({ questions }) => {
         alignItems: 'center',
         width: '100%',
         textAlign: 'center',
-        paddingTop: '0.3rem'
+        paddingTop: '1rem'
       }}>
-        <div style={{ marginBottom: '0.3rem', flexShrink: 0 }}>
+        <div style={{ marginBottom: '0.5rem', marginTop: '0.5rem', flexShrink: 0 }}>
           <h1 style={{ 
             fontSize: 'clamp(1rem, 3.5vw, 1.4rem)', 
             color: '#ffffff', 
             textShadow: '2px 2px 4px rgba(0, 0, 0, 0.8)',
-            marginBottom: '0.2rem',
-            marginTop: '0.1rem',
+            marginBottom: '0.3rem',
+            marginTop: '0.5rem',
             letterSpacing: '1px',
             lineHeight: '1.1',
-            padding: '0.1rem 0'
+            padding: '0.3rem 0'
           }}>
             🏆 AWS URLクイズ 🏆
           </h1>

@@ -15,12 +15,12 @@
   .container {
     min-height: 100vh;
     min-height: calc(var(--vh, 1vh) * 100);
-    padding-top: 0.3rem !important;
+    padding-top: 0.8rem !important;
     padding-bottom: 0.5rem;
   }
   
   main {
-    padding-top: 0.2rem !important;
+    padding-top: 0.8rem !important;
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -29,15 +29,15 @@
   
   h1 {
     font-size: clamp(1rem, 3.5vw, 1.3rem) !important;
-    margin-top: 0.1rem !important;
-    margin-bottom: 0.1rem !important;
+    margin-top: 0.8rem !important;
+    margin-bottom: 0.4rem !important;
     line-height: 1.1 !important;
-    padding: 0.2rem 0 !important;
+    padding: 0.4rem 0 !important;
   }
   
   .description {
     font-size: 0.8rem !important;
-    margin-bottom: 0.3rem !important;
+    margin-bottom: 0.5rem !important;
     line-height: 1.2 !important;
   }
 }
@@ -45,17 +45,22 @@
 /* 超小画面対応 */
 @media screen and (max-height: 600px) {
   .container {
-    padding-top: 0.1rem !important;
+    padding-top: 0.5rem !important;
+  }
+  
+  main {
+    padding-top: 0.5rem !important;
   }
   
   h1 {
     font-size: 1rem !important;
-    margin: 0.1rem 0 !important;
+    margin: 0.3rem 0 !important;
+    padding: 0.2rem 0 !important;
   }
   
   .description {
     font-size: 0.75rem !important;
-    margin-bottom: 0.2rem !important;
+    margin-bottom: 0.3rem !important;
   }
 }
 
@@ -226,12 +231,12 @@ a {
 /* モバイル対応 - クイズコンテナ */
 @media screen and (max-width: 768px) {
   .quiz-container {
-    height: calc(100vh - 120px);
-    min-height: 500px;
+    height: calc(100vh - 160px);
+    min-height: 450px;
     padding: 0.8rem;
     padding-bottom: 4rem;
     border-radius: 15px;
-    grid-template-rows: auto minmax(150px, 1fr) minmax(120px, auto) auto;
+    grid-template-rows: auto minmax(140px, 1fr) minmax(110px, auto) auto;
     grid-gap: 0.8rem;
   }
 }
