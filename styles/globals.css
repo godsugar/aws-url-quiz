@@ -1,3 +1,29 @@
+/* モバイル対応 */
+@supports (height: 100dvh) {
+  .container {
+    min-height: 100dvh !important;
+  }
+}
+
+/* モバイルブラウザのアドレスバー対応 */
+@media screen and (max-width: 768px) {
+  .container {
+    min-height: calc(100vh - env(keyboard-inset-height, 0px));
+    padding-top: max(0.5rem, env(safe-area-inset-top));
+  }
+  
+  main {
+    padding-top: 0.5rem !important;
+  }
+  
+  h1 {
+    font-size: clamp(1.1rem, 4vw, 1.4rem) !important;
+    margin-top: 0.2rem !important;
+    margin-bottom: 0.2rem !important;
+    line-height: 1.1 !important;
+  }
+}
+
 /* ページ初期表示アニメーション */
 @keyframes fadeInUp {
   0% {
@@ -160,6 +186,19 @@ a {
   box-sizing: border-box;
   margin: 0 auto;
   animation: scaleIn 0.7s ease-out 0.4s both, glow 2s ease-in-out 1.2s infinite;
+}
+
+/* モバイル対応 - クイズコンテナ */
+@media screen and (max-width: 768px) {
+  .quiz-container {
+    height: calc(100vh - 120px);
+    min-height: 500px;
+    padding: 0.8rem;
+    padding-bottom: 4rem;
+    border-radius: 15px;
+    grid-template-rows: auto minmax(150px, 1fr) minmax(120px, auto) auto;
+    grid-gap: 0.8rem;
+  }
 }
 
 .quiz-container::before {
