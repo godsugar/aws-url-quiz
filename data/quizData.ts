@@ -114,11 +114,25 @@ export const quizQuestions: QuizQuestion[] = [
     options: [
       "https://iam.amazon.com/",
       "https://aws.amazon.com/iam/console/",
-      "https://console.aws.amazon.com/iam/",
+      "https://console.aws.amazon.com/iam/home",
       "https://amazon.aws.com/iam/"
     ],
     correctAnswer: 2,
-    explanation: "AWS IAMのコンソールURLは https://console.aws.amazon.com/iam/ です。"
+    explanation: "AWS IAMのコンソールURLは https://console.aws.amazon.com/iam/home です。IAMコンソールでは、ユーザー、グループ、ロール、ポリシーなどを管理できます。",
+    links: [
+      {
+        title: "AWS IAM コンソール",
+        url: "https://console.aws.amazon.com/iam/home"
+      },
+      {
+        title: "AWS IAM サービスページ",
+        url: "https://aws.amazon.com/iam/"
+      },
+      {
+        title: "AWS IAM ドキュメント",
+        url: "https://docs.aws.amazon.com/iam/"
+      }
+    ]
   },
   {
     id: 8,
@@ -150,11 +164,25 @@ export const quizQuestions: QuizQuestion[] = [
     options: [
       "https://cloudwatch.amazon.com/",
       "https://aws.amazon.com/cloudwatch/console/",
-      "https://console.aws.amazon.com/cloudwatch/",
+      "https://console.aws.amazon.com/cloudwatch/home",
       "https://amazon.aws.com/cloudwatch/"
     ],
     correctAnswer: 2,
-    explanation: "Amazon CloudWatchのコンソールURLは https://console.aws.amazon.com/cloudwatch/ です。"
+    explanation: "Amazon CloudWatchのコンソールURLは https://console.aws.amazon.com/cloudwatch/home です。多くのAWSサービスのコンソールURLは /home サフィックスを含みます。",
+    links: [
+      {
+        title: "Amazon CloudWatch コンソール",
+        url: "https://console.aws.amazon.com/cloudwatch/home"
+      },
+      {
+        title: "Amazon CloudWatch サービスページ",
+        url: "https://aws.amazon.com/cloudwatch/"
+      },
+      {
+        title: "Amazon CloudWatch ドキュメント",
+        url: "https://docs.aws.amazon.com/cloudwatch/"
+      }
+    ]
   },
   {
     id: 11,
@@ -414,12 +442,26 @@ export const quizQuestions: QuizQuestion[] = [
     question: "Amazon EventBridgeのコンソールページは？",
     options: [
       "https://console.aws.amazon.com/eventbridge/",
-      "https://console.aws.amazon.com/events/",
+      "https://console.aws.amazon.com/events/home",
       "https://eventbridge.aws.amazon.com/",
       "https://events.amazon.com/"
     ],
-    correctAnswer: 0,
-    explanation: "Amazon EventBridgeのコンソールページは https://console.aws.amazon.com/eventbridge/ です。以前は /events/ でしたが、現在は /eventbridge/ に変更されています。"
+    correctAnswer: 1,
+    explanation: "Amazon EventBridgeのコンソールページは https://console.aws.amazon.com/events/home です。EventBridgeは以前のCloudWatch Eventsの後継サービスで、コンソールURLは /events/home を使用します。",
+    links: [
+      {
+        title: "Amazon EventBridge コンソール",
+        url: "https://console.aws.amazon.com/events/home"
+      },
+      {
+        title: "Amazon EventBridge サービスページ",
+        url: "https://aws.amazon.com/eventbridge/"
+      },
+      {
+        title: "Amazon EventBridge ドキュメント",
+        url: "https://docs.aws.amazon.com/eventbridge/"
+      }
+    ]
   },
   {
     id: 33,
