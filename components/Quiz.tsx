@@ -51,13 +51,13 @@ const Quiz: React.FC<QuizProps> = ({ questions }) => {
           <p>あなたのスコア: {score} / {questions.length}</p>
           <p>正答率: {Math.round((score / questions.length) * 100)}%</p>
           {score === questions.length ? (
-            <p className="perfect-score">満点おめでとうございます！AWSドメインの達人です！</p>
+            <p className="perfect-score">満点おめでとうございます！AWSドメインパターンの達人です！</p>
           ) : score >= questions.length * 0.8 ? (
-            <p className="good-score">素晴らしい成績です！AWSドメインについてよく理解しています！</p>
+            <p className="good-score">素晴らしい成績です！AWSのドメインパターンについてよく理解しています！</p>
           ) : score >= questions.length * 0.6 ? (
-            <p className="average-score">良い成績です。もう少し練習しましょう！</p>
+            <p className="average-score">良い成績です。もう少しAWSのドメインパターンについて学びましょう！</p>
           ) : (
-            <p className="low-score">AWSドメインについてもう少し学習しましょう。</p>
+            <p className="low-score">AWSのドメインパターンについてもう少し学習しましょう。</p>
           )}
           <button className="restart-button" onClick={restartQuiz}>
             もう一度挑戦する
@@ -69,7 +69,7 @@ const Quiz: React.FC<QuizProps> = ({ questions }) => {
 
   return (
     <div className="quiz-container">
-      <h2 className="title">AWSドメインクイズ</h2>
+      <h2 className="title">AWSドメインパターンクイズ</h2>
       <p className="question">
         問題 {currentQuestionIndex + 1}/{questions.length}: {currentQuestion.question}
       </p>

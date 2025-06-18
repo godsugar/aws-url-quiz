@@ -11,15 +11,16 @@ const Home: NextPage<HomeProps> = ({ questions }) => {
   return (
     <div className="container">
       <Head>
-        <title>AWS ドメインクイズ</title>
-        <meta name="description" content="AWSの各種サービスのURLがawsドメインなのか、Amazonドメインかを当てるクイズゲーム" />
+        <title>AWS ドメインパターンクイズ</title>
+        <meta name="description" content="AWSの各種サービスのドメインパターン、URLの形式、独自ドメイン設定に関する知識を試すクイズゲーム" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main>
-        <h1 className="title">AWS ドメインクイズ</h1>
+        <h1 className="title">AWS ドメインパターンクイズ</h1>
         <p style={{ textAlign: 'center', marginBottom: '2rem' }}>
-          AWSの各種サービスのURLがawsドメインなのか、Amazonドメインかを当てるクイズゲームです。
+          AWSの各種サービスのドメインパターン、URLの形式、独自ドメイン設定に関する知識を試すクイズゲームです。
+          コンソールURL、サービス紹介ページ、デフォルトドメイン、カスタムドメイン設定など、
           あなたはAWSのドメインについてどれだけ知っていますか？
         </p>
         <Quiz questions={questions} />
@@ -27,7 +28,7 @@ const Home: NextPage<HomeProps> = ({ questions }) => {
 
       <footer>
         <p style={{ textAlign: 'center', marginTop: '2rem', color: '#666' }}>
-          © {new Date().getFullYear()} AWS ドメインクイズ - 学習目的で作成されたアプリケーションです
+          © {new Date().getFullYear()} AWS ドメインパターンクイズ - 学習目的で作成されたアプリケーションです
         </p>
       </footer>
     </div>
