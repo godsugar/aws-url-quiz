@@ -11,16 +11,16 @@
     "deploy": "npm run build && touch out/.nojekyll"
   },
   "dependencies": {
-    "next": "^14.2.15",
+    "next": "^15.3.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
-    "@types/node": "^20.14.10",
-    "@types/react": "^18.3.3",
-    "@types/react-dom": "^18.3.0",
-    "eslint": "^8.57.0",
-    "eslint-config-next": "^14.2.15",
-    "typescript": "^5.5.3"
+    "@types/node": "^22.10.2",
+    "@types/react": "^18.3.17",
+    "@types/react-dom": "^18.3.5",
+    "eslint": "^9.17.0",
+    "eslint-config-next": "^15.3.3",
+    "typescript": "^5.7.2"
   }
 }
