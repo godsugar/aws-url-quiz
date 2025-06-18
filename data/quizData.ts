@@ -198,6 +198,9 @@ export const quizQuestions: QuizQuestion[] = [
       "https://my-unique-bucket.amazonaws.s3.com/image.jpg",
       "https://s3.my-unique-bucket.amazonaws.com/image.jpg"
     ],
+    correctAnswer: 0,
+    explanation: "S3バケットのオブジェクトに直接アクセスする場合のURLは https://[バケット名].s3.amazonaws.com/[オブジェクト名] または https://s3.[リージョン].amazonaws.com/[バケット名]/[オブジェクト名] の形式です。"
+  },
   {
     id: 17,
     question: "S3バケット「static-website」で静的ウェブサイトホスティングを有効にした場合のURLは？",
