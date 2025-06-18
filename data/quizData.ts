@@ -9,482 +9,242 @@ export interface QuizQuestion {
 export const quizQuestions: QuizQuestion[] = [
   {
     id: 1,
-    question: "Amazon S3のコンソールURLは？",
+    question: "S3バケット「my-unique-bucket」にオブジェクト「image.jpg」を直接アクセスする場合のURLは？",
     options: [
-      "https://s3.amazon.com/",
-      "https://s3.aws.amazon.com/",
-      "https://console.aws.amazon.com/s3/",
-      "https://amazon.com/s3/"
+      "https://my-unique-bucket.s3.amazonaws.com/image.jpg",
+      "https://s3.amazonaws.com/my-unique-bucket/image.jpg",
+      "https://my-unique-bucket.amazonaws.s3.com/image.jpg",
+      "https://s3.my-unique-bucket.amazonaws.com/image.jpg"
     ],
-    correctAnswer: 2,
-    explanation: "S3のコンソールURLは https://console.aws.amazon.com/s3/ です。AWSのマネジメントコンソールは基本的に console.aws.amazon.com ドメインを使用しています。"
+    correctAnswer: 0,
+    explanation: "S3バケットのオブジェクトに直接アクセスする場合のURLは https://[バケット名].s3.amazonaws.com/[オブジェクト名] または https://s3.[リージョン].amazonaws.com/[バケット名]/[オブジェクト名] の形式です。"
   },
   {
     id: 2,
-    question: "AWS Lambdaのコンソールページは？",
+    question: "S3バケット「static-website」で静的ウェブサイトホスティングを有効にした場合のURLは？",
     options: [
-      "https://lambda.amazon.com/",
-      "https://console.aws.amazon.com/lambda/",
-      "https://aws.amazon.com/lambda/",
-      "https://amazon.aws.com/lambda/"
+      "https://static-website.s3.amazonaws.com",
+      "http://static-website.s3-website-[リージョン].amazonaws.com",
+      "https://s3.amazonaws.com/static-website",
+      "http://static-website.website.amazonaws.com"
     ],
     correctAnswer: 1,
-    explanation: "AWS Lambdaのコンソールは https://console.aws.amazon.com/lambda/ です。サービスページは aws.amazon.com/lambda/ ですが、コンソールは console.aws.amazon.com ドメインを使用します。"
+    explanation: "S3の静的ウェブサイトホスティングを有効にした場合のURLは http://[バケット名].s3-website-[リージョン].amazonaws.com または http://[バケット名].s3-website.[リージョン].amazonaws.com の形式です。HTTPSではなくHTTPであることに注意してください。"
   },
   {
     id: 3,
-    question: "AWS公式サイトのトップページURLは？",
+    question: "CloudFrontディストリビューション「d1a2b3c4d5e6f7」のデフォルトドメインは？",
     options: [
-      "https://aws.com/",
-      "https://aws.amazon.com/",
-      "https://amazon.com/aws/",
-      "https://amazon.aws.com/"
+      "https://d1a2b3c4d5e6f7.cloudfront.net",
+      "https://d1a2b3c4d5e6f7.cdn.amazonaws.com",
+      "https://cloudfront.d1a2b3c4d5e6f7.amazonaws.com",
+      "https://d1a2b3c4d5e6f7.aws-cloudfront.com"
     ],
-    correctAnswer: 1,
-    explanation: "AWS公式サイトのトップページは https://aws.amazon.com/ です。"
+    correctAnswer: 0,
+    explanation: "CloudFrontディストリビューションのデフォルトドメインは https://[ディストリビューションID].cloudfront.net の形式です。"
   },
   {
     id: 4,
-    question: "Amazon EC2のサービス紹介ページは？",
+    question: "API Gateway「api123456789」のデフォルトエンドポイントURLは？（リージョンはus-east-1）",
     options: [
-      "https://aws.amazon.com/ec2/",
-      "https://amazon.com/ec2/",
-      "https://ec2.aws.amazon.com/",
-      "https://amazon.aws.com/ec2/"
+      "https://api123456789.execute-api.us-east-1.amazonaws.com/stage",
+      "https://api123456789.apigateway.us-east-1.amazonaws.com/stage",
+      "https://api-gateway.us-east-1.amazonaws.com/api123456789/stage",
+      "https://us-east-1.api.amazonaws.com/api123456789/stage"
     ],
     correctAnswer: 0,
-    explanation: "Amazon EC2のサービス紹介ページは https://aws.amazon.com/ec2/ です。AWSのサービス紹介ページは基本的に aws.amazon.com/[サービス名]/ の形式です。"
+    explanation: "API Gatewayのデフォルトエンドポイントは https://[API ID].execute-api.[リージョン].amazonaws.com/[ステージ名] の形式です。"
   },
   {
     id: 5,
-    question: "AWS CloudFormationのコンソールURLは？",
+    question: "Elastic Beanstalkアプリケーション「myapp」の環境「dev」のデフォルトURLは？（リージョンはus-west-2）",
     options: [
-      "https://cloudformation.amazon.com/",
-      "https://aws.amazon.com/cloudformation/console/",
-      "https://console.aws.amazon.com/cloudformation/",
-      "https://amazon.aws.com/cloudformation/"
+      "https://myapp-dev.elasticbeanstalk.us-west-2.amazonaws.com",
+      "https://dev.myapp.elasticbeanstalk.com",
+      "http://dev.myapp.us-west-2.elasticbeanstalk.com",
+      "http://myapp-dev.us-west-2.elasticbeanstalk.com"
     ],
-    correctAnswer: 2,
-    explanation: "AWS CloudFormationのコンソールURLは https://console.aws.amazon.com/cloudformation/ です。"
+    correctAnswer: 3,
+    explanation: "Elastic BeanstalkのデフォルトURLは http://[環境名].[リージョン].elasticbeanstalk.com の形式です。環境名は通常、アプリケーション名とステージ名を組み合わせたものになります。"
   },
   {
     id: 6,
-    question: "Amazon DynamoDBのサービス紹介ページは？",
+    question: "Cognito User Pool「auth-pool」のドメインプレフィックスを「mycompany-login」に設定した場合のホストされたUIのURLは？（リージョンはeu-west-1）",
     options: [
-      "https://dynamodb.aws.amazon.com/",
-      "https://aws.amazon.com/dynamodb/",
-      "https://amazon.com/dynamodb/",
-      "https://dynamodb.amazon.com/"
+      "https://mycompany-login.auth.eu-west-1.amazoncognito.com",
+      "https://auth-pool.mycompany-login.cognito.amazonaws.com",
+      "https://mycompany-login.cognito-idp.eu-west-1.amazonaws.com",
+      "https://auth.mycompany-login.eu-west-1.cognito.amazon.com"
     ],
-    correctAnswer: 1,
-    explanation: "Amazon DynamoDBのサービス紹介ページは https://aws.amazon.com/dynamodb/ です。"
+    correctAnswer: 0,
+    explanation: "Cognito User Poolのホストされたログインページのデフォルトドメインは https://[ドメインプレフィックス].auth.[リージョン].amazoncognito.com の形式です。"
   },
   {
     id: 7,
-    question: "AWS IAMのコンソールURLは？",
+    question: "AWS Amplifyアプリ「a1b2c3d4e5f6」のブランチ「main」のデフォルトURLは？",
     options: [
-      "https://iam.amazon.com/",
-      "https://aws.amazon.com/iam/console/",
-      "https://console.aws.amazon.com/iam/",
-      "https://amazon.aws.com/iam/"
+      "https://main.a1b2c3d4e5f6.amplify.aws",
+      "https://main.a1b2c3d4e5f6.amplifyapp.com",
+      "https://a1b2c3d4e5f6-main.amplifyapp.com",
+      "https://main-a1b2c3d4e5f6.aws.amplify.com"
     ],
-    correctAnswer: 2,
-    explanation: "AWS IAMのコンソールURLは https://console.aws.amazon.com/iam/ です。"
+    correctAnswer: 1,
+    explanation: "AWS Amplifyアプリのデフォルトドメインは https://[ブランチ名].[アプリID].amplifyapp.com の形式です。"
   },
   {
     id: 8,
-    question: "Amazon RDSのサービス紹介ページは？",
+    question: "Amazon AppRunnerサービス「service-a1b2c3」のデフォルトドメインは？",
     options: [
-      "https://aws.amazon.com/rds/",
-      "https://rds.aws.amazon.com/",
-      "https://amazon.com/rds/",
-      "https://rds.amazon.com/"
+      "https://service-a1b2c3.apprunner.amazonaws.com",
+      "https://service-a1b2c3.run.aws.amazon.com",
+      "https://service-a1b2c3.awsapprunner.com",
+      "https://apprunner-service-a1b2c3.amazonaws.com"
     ],
-    correctAnswer: 0,
-    explanation: "Amazon RDSのサービス紹介ページは https://aws.amazon.com/rds/ です。"
+    correctAnswer: 2,
+    explanation: "Amazon AppRunnerサービスのデフォルトドメインは https://[サービスID].awsapprunner.com の形式です。"
   },
   {
     id: 9,
-    question: "AWS Marketplaceのウェブサイトは？",
+    question: "Amazon LightsailのWordPressインスタンス「wordpress-site」のデフォルトドメインは？",
     options: [
-      "https://marketplace.aws/",
-      "https://aws.amazon.com/marketplace/",
-      "https://marketplace.amazon.com/aws/",
-      "https://amazon.com/aws-marketplace/"
+      "https://wordpress-site.lightsailapp.com",
+      "https://wordpress-site.amazon-lightsail.com",
+      "https://wordpress-site.lightsail.amazonaws.com",
+      "https://lightsail.wordpress-site.amazonaws.com"
     ],
-    correctAnswer: 1,
-    explanation: "AWS Marketplaceのウェブサイトは https://aws.amazon.com/marketplace/ です。"
+    correctAnswer: 0,
+    explanation: "Amazon LightsailのWordPressインスタンスのデフォルトドメインは https://[インスタンス名].lightsailapp.com の形式です。"
   },
   {
     id: 10,
-    question: "Amazon CloudWatchのコンソールURLは？",
+    question: "AWS Lambda関数のURLエンドポイントを有効にした場合のURLは？（関数名：my-function、リージョン：ap-northeast-1）",
     options: [
-      "https://cloudwatch.amazon.com/",
-      "https://aws.amazon.com/cloudwatch/console/",
-      "https://console.aws.amazon.com/cloudwatch/",
-      "https://amazon.aws.com/cloudwatch/"
+      "https://my-function.lambda.ap-northeast-1.amazonaws.com",
+      "https://[ランダムID].lambda-url.ap-northeast-1.on.aws",
+      "https://[ランダムID].execute-api.ap-northeast-1.amazonaws.com",
+      "https://lambda.ap-northeast-1.amazonaws.com/my-function"
     ],
-    correctAnswer: 2,
-    explanation: "Amazon CloudWatchのコンソールURLは https://console.aws.amazon.com/cloudwatch/ です。"
+    correctAnswer: 1,
+    explanation: "Lambda関数のURLエンドポイントは https://[ランダムID].lambda-url.[リージョン].on.aws の形式です。関数名はURLに含まれず、AWSが生成するランダムなIDが使用されます。"
   },
   {
     id: 11,
-    question: "AWS Step Functionsのサービス紹介ページは？",
+    question: "Amazon ECRのプライベートリポジトリ「my-repo」のイメージをpullする際のURLは？（アカウントID：123456789012、リージョン：us-east-2）",
     options: [
-      "https://aws.amazon.com/step-functions/",
-      "https://stepfunctions.aws.amazon.com/",
-      "https://amazon.com/step-functions/",
-      "https://step-functions.amazon.com/"
+      "123456789012.ecr.us-east-2.amazonaws.com/my-repo:latest",
+      "ecr.us-east-2.amazonaws.com/123456789012/my-repo:latest",
+      "us-east-2.ecr.123456789012.amazonaws.com/my-repo:latest",
+      "my-repo.123456789012.ecr.us-east-2.amazonaws.com:latest"
     ],
     correctAnswer: 0,
-    explanation: "AWS Step Functionsのサービス紹介ページは https://aws.amazon.com/step-functions/ です。ハイフンを含むサービス名も同様のパターンで、aws.amazon.com/[サービス名]/ の形式になります。"
+    explanation: "Amazon ECRのプライベートリポジトリのURLは [アカウントID].dkr.ecr.[リージョン].amazonaws.com/[リポジトリ名]:[タグ] の形式です。"
   },
   {
     id: 12,
-    question: "Amazon EKS (Elastic Kubernetes Service) のコンソールURLは？",
+    question: "AWS Cloud9環境「my-ide」のデフォルトURLは？（リージョン：eu-central-1）",
     options: [
-      "https://eks.amazon.com/",
-      "https://aws.amazon.com/eks/console/",
-      "https://console.aws.amazon.com/eks/",
-      "https://kubernetes.aws.amazon.com/"
+      "https://my-ide.cloud9.eu-central-1.amazonaws.com",
+      "https://eu-central-1.console.aws.amazon.com/cloud9/my-ide",
+      "https://[環境ID].vfs.cloud9.eu-central-1.amazonaws.com",
+      "https://cloud9.eu-central-1.amazonaws.com/my-ide"
     ],
     correctAnswer: 2,
-    explanation: "Amazon EKSのコンソールURLは https://console.aws.amazon.com/eks/ です。他のAWSサービスと同様に、コンソールは console.aws.amazon.com/[サービス名]/ の形式です。"
+    explanation: "AWS Cloud9環境のデフォルトURLは https://[環境ID].vfs.cloud9.[リージョン].amazonaws.com の形式です。環境IDは自動生成される一意の識別子です。"
   },
   {
     id: 13,
-    question: "AWS Secrets Managerのサービス紹介ページは？",
+    question: "Amazon QuickSightのダッシュボード共有URLは？（アカウントID：123456789012、リージョン：us-west-2）",
     options: [
-      "https://aws.amazon.com/secrets-manager/",
-      "https://secrets-manager.aws.amazon.com/",
-      "https://amazon.com/secrets-manager/",
-      "https://aws.amazon.com/secretsmanager/"
+      "https://quicksight.aws.amazon.com/sn/dashboards/[ダッシュボードID]",
+      "https://us-west-2.quicksight.aws.amazon.com/sn/dashboards/[ダッシュボードID]",
+      "https://123456789012.quicksight.us-west-2.amazonaws.com/dashboards/[ダッシュボードID]",
+      "https://quicksight.us-west-2.amazonaws.com/123456789012/dashboards/[ダッシュボードID]"
     ],
-    correctAnswer: 3,
-    explanation: "AWS Secrets Managerのサービス紹介ページは https://aws.amazon.com/secretsmanager/ です。一部のサービスでは、URLにハイフンが含まれないことがあります。"
+    correctAnswer: 1,
+    explanation: "Amazon QuickSightのダッシュボード共有URLは https://[リージョン].quicksight.aws.amazon.com/sn/dashboards/[ダッシュボードID] の形式です。リージョンによっては、リージョン部分がないURLになることもあります。"
   },
   {
     id: 14,
-    question: "AWS Management Consoleのメインページは？",
+    question: "AWS AppSyncのGraphQL APIエンドポイントのURLは？（API ID：abcdefghij、リージョン：ap-southeast-2）",
     options: [
-      "https://aws.amazon.com/console/",
-      "https://console.aws.amazon.com/",
-      "https://management.aws.amazon.com/",
-      "https://amazon.com/aws-console/"
+      "https://abcdefghij.appsync-api.ap-southeast-2.amazonaws.com/graphql",
+      "https://appsync.ap-southeast-2.amazonaws.com/abcdefghij/graphql",
+      "https://graphql.abcdefghij.appsync.ap-southeast-2.amazonaws.com",
+      "https://ap-southeast-2.appsync.amazonaws.com/graphql/abcdefghij"
     ],
-    correctAnswer: 1,
-    explanation: "AWS Management Consoleのメインページは https://console.aws.amazon.com/ です。ここからすべてのAWSサービスのコンソールにアクセスできます。"
+    correctAnswer: 0,
+    explanation: "AWS AppSyncのGraphQL APIエンドポイントのURLは https://[API ID].appsync-api.[リージョン].amazonaws.com/graphql の形式です。"
   },
   {
     id: 15,
-    question: "Amazon SageMakerのコンソールURLは？",
+    question: "Amazon OpenSearchのドメイン「search-data」のエンドポイントURLは？（リージョン：eu-west-2）",
     options: [
-      "https://sagemaker.amazon.com/",
-      "https://aws.amazon.com/sagemaker/console/",
-      "https://console.aws.amazon.com/sagemaker/",
-      "https://ml.aws.amazon.com/sagemaker/"
+      "https://search-data.eu-west-2.opensearch.amazonaws.com",
+      "https://search-data.opensearch.eu-west-2.amazonaws.com",
+      "https://opensearch.eu-west-2.amazonaws.com/search-data",
+      "https://eu-west-2.opensearch.amazonaws.com/search-data"
     ],
-    correctAnswer: 2,
-    explanation: "Amazon SageMakerのコンソールURLは https://console.aws.amazon.com/sagemaker/ です。機械学習サービスも他のAWSサービスと同様のURLパターンに従っています。"
+    correctAnswer: 1,
+    explanation: "Amazon OpenSearchのドメインエンドポイントは https://[ドメイン名].opensearch.[リージョン].amazonaws.com の形式です。"
   },
   {
     id: 16,
-    question: "AWS Billing and Cost Managementのコンソールページは？",
+    question: "AWS IoT Core「my-iot-endpoint」のデータエンドポイントURLは？（アカウント固有のエンドポイント：a1b2c3d4e5f6、リージョン：us-east-1）",
     options: [
-      "https://billing.amazon.com/",
-      "https://console.aws.amazon.com/billing/",
-      "https://aws.amazon.com/billing/",
-      "https://console.aws.amazon.com/cost-management/"
+      "https://my-iot-endpoint.iot.us-east-1.amazonaws.com",
+      "https://a1b2c3d4e5f6-ats.iot.us-east-1.amazonaws.com",
+      "https://iot.us-east-1.amazonaws.com/my-iot-endpoint",
+      "https://a1b2c3d4e5f6.iot-endpoint.us-east-1.amazonaws.com"
     ],
     correctAnswer: 1,
-    explanation: "AWS Billing and Cost Managementのコンソールページは https://console.aws.amazon.com/billing/ です。請求関連のサービスも同様のパターンに従っています。"
+    explanation: "AWS IoT Coreのデータエンドポイントは https://[アカウント固有のエンドポイント]-ats.iot.[リージョン].amazonaws.com の形式です。エンドポイントはAWSアカウントごとに一意です。"
   },
   {
     id: 17,
-    question: "AWS Elastic Beanstalkのサービス紹介ページは？",
+    question: "Amazon Kinesis Video Streams「my-stream」のデータURLは？（リージョン：us-west-1）",
     options: [
-      "https://aws.amazon.com/elasticbeanstalk/",
-      "https://elasticbeanstalk.aws.amazon.com/",
-      "https://aws.amazon.com/elastic-beanstalk/",
-      "https://beanstalk.amazon.com/"
+      "https://kinesisvideo.us-west-1.amazonaws.com/my-stream",
+      "https://my-stream.kinesisvideo.us-west-1.amazonaws.com",
+      "https://kvs.us-west-1.amazonaws.com/my-stream",
+      "https://video.kinesis.us-west-1.amazonaws.com/my-stream"
     ],
     correctAnswer: 0,
-    explanation: "AWS Elastic Beanstalkのサービス紹介ページは https://aws.amazon.com/elasticbeanstalk/ です。このサービスはURLにハイフンを含まず、単語がつながっています。"
+    explanation: "Amazon Kinesis Video StreamsのデータURLは https://kinesisvideo.[リージョン].amazonaws.com/[ストリーム名] の形式です。"
   },
   {
     id: 18,
-    question: "Amazon API Gatewayのコンソールページは？",
+    question: "Amazon MSKクラスター「kafka-cluster」のブートストラップサーバーアドレスは？（リージョン：eu-north-1）",
     options: [
-      "https://apigateway.amazon.com/",
-      "https://console.aws.amazon.com/apigateway/",
-      "https://aws.amazon.com/api-gateway/console/",
-      "https://console.aws.amazon.com/api-gateway/"
+      "kafka-cluster.msk.eu-north-1.amazonaws.com:9092",
+      "b-1.kafka-cluster.abcdef.eu-north-1.amazonaws.com:9092",
+      "msk.eu-north-1.amazonaws.com/kafka-cluster:9092",
+      "kafka-cluster.eu-north-1.kafka.amazonaws.com:9092"
     ],
     correctAnswer: 1,
-    explanation: "Amazon API Gatewayのコンソールページは https://console.aws.amazon.com/apigateway/ です。コンソールURLでは、サービス名のハイフンが省略されることがあります。"
+    explanation: "Amazon MSKクラスターのブートストラップサーバーアドレスは b-[ノード番号].[クラスター名].[一意のID].[リージョン].amazonaws.com:9092 の形式です。"
   },
   {
     id: 19,
-    question: "AWS Documentationのメインページは？",
+    question: "Amazon ElastiCacheのRedisクラスター「redis-cache」のプライマリエンドポイントは？（リージョン：ap-south-1）",
     options: [
-      "https://aws.amazon.com/documentation/",
-      "https://docs.aws.amazon.com/",
-      "https://documentation.aws.amazon.com/",
-      "https://amazon.com/aws-docs/"
+      "redis-cache.abcdef.ng.0001.ap-south-1.elasticache.amazonaws.com",
+      "redis-cache.elasticache.ap-south-1.amazonaws.com",
+      "ap-south-1.elasticache.amazonaws.com/redis-cache",
+      "redis.ap-south-1.elasticache.amazonaws.com/redis-cache"
     ],
-    correctAnswer: 1,
-    explanation: "AWS Documentationのメインページは https://docs.aws.amazon.com/ です。ドキュメントは独自のサブドメイン（docs）を使用しています。"
+    correctAnswer: 0,
+    explanation: "Amazon ElastiCacheのRedisクラスターのプライマリエンドポイントは [クラスター名].[一意のID].ng.0001.[リージョン].elasticache.amazonaws.com の形式です。"
   },
   {
     id: 20,
-    question: "AWS Trainingのウェブサイトは？",
+    question: "Amazon MQのRabbitMQブローカー「mq-broker」のエンドポイントは？（リージョン：ca-central-1）",
     options: [
-      "https://aws.amazon.com/training/",
-      "https://training.aws.amazon.com/",
-      "https://aws.training/",
-      "https://amazon.com/aws-training/"
-    ],
-    correctAnswer: 2,
-    explanation: "AWS Trainingのウェブサイトは https://aws.training/ です。トレーニングサイトは独自のドメイン（aws.training）を使用しています。"
-  },
-  {
-    id: 21,
-    question: "Amazon ECR (Elastic Container Registry) のコンソールURLは？",
-    options: [
-      "https://ecr.amazon.com/",
-      "https://console.aws.amazon.com/ecr/",
-      "https://aws.amazon.com/ecr/console/",
-      "https://containers.aws.amazon.com/"
+      "mq-broker.mq.ca-central-1.amazonaws.com",
+      "b-12345678-1.mq.ca-central-1.amazonaws.com",
+      "rabbitmq.ca-central-1.amazonaws.com/mq-broker",
+      "mq-broker.rabbitmq.ca-central-1.amazonaws.com"
     ],
     correctAnswer: 1,
-    explanation: "Amazon ECRのコンソールURLは https://console.aws.amazon.com/ecr/ です。コンテナサービスも同様のパターンに従っています。"
-  },
-  {
-    id: 22,
-    question: "AWS Certificationのウェブサイトは？",
-    options: [
-      "https://aws.amazon.com/certification/",
-      "https://certification.aws.amazon.com/",
-      "https://aws.certification.com/",
-      "https://amazon.com/aws-certification/"
-    ],
-    correctAnswer: 0,
-    explanation: "AWS Certificationのウェブサイトは https://aws.amazon.com/certification/ です。認定プログラムは通常のサービス紹介ページと同じパターンに従っています。"
-  },
-  {
-    id: 23,
-    question: "AWS CloudShellのアクセスURLは？",
-    options: [
-      "https://cloudshell.aws.amazon.com/",
-      "https://console.aws.amazon.com/cloudshell/",
-      "https://shell.aws.amazon.com/",
-      "https://aws.amazon.com/cloudshell/console/"
-    ],
-    correctAnswer: 1,
-    explanation: "AWS CloudShellのアクセスURLは https://console.aws.amazon.com/cloudshell/ です。CloudShellもコンソールの一部として同じパターンに従っています。"
-  },
-  {
-    id: 24,
-    question: "AWS Partner Networkのウェブサイトは？",
-    options: [
-      "https://aws.amazon.com/partners/",
-      "https://partners.aws.amazon.com/",
-      "https://aws.partners/",
-      "https://partner-network.aws.amazon.com/"
-    ],
-    correctAnswer: 0,
-    explanation: "AWS Partner Networkのウェブサイトは https://aws.amazon.com/partners/ です。パートナープログラムも通常のサービス紹介ページと同じパターンに従っています。"
-  },
-  {
-    id: 25,
-    question: "AWS Pricing Calculatorのウェブサイトは？",
-    options: [
-      "https://aws.amazon.com/pricing-calculator/",
-      "https://calculator.aws.amazon.com/",
-      "https://calculator.aws/",
-      "https://pricing.aws.amazon.com/"
-    ],
-    correctAnswer: 2,
-    explanation: "AWS Pricing Calculatorのウェブサイトは https://calculator.aws/ です。料金計算ツールは独自のドメイン（calculator.aws）を使用しています。"
-  },
-  {
-    id: 26,
-    question: "Amazon Cognito のコンソールURLは？",
-    options: [
-      "https://cognito.amazon.com/",
-      "https://console.aws.amazon.com/cognito/",
-      "https://aws.amazon.com/cognito/console/",
-      "https://identity.aws.amazon.com/"
-    ],
-    correctAnswer: 1,
-    explanation: "Amazon Cognito のコンソールURLは https://console.aws.amazon.com/cognito/ です。認証サービスも同様のパターンに従っています。"
-  },
-  {
-    id: 27,
-    question: "AWS Glueのサービス紹介ページは？",
-    options: [
-      "https://aws.amazon.com/glue/",
-      "https://glue.aws.amazon.com/",
-      "https://amazon.com/glue/",
-      "https://data.aws.amazon.com/glue/"
-    ],
-    correctAnswer: 0,
-    explanation: "AWS Glueのサービス紹介ページは https://aws.amazon.com/glue/ です。データ統合サービスも通常のサービス紹介ページと同じパターンに従っています。"
-  },
-  {
-    id: 28,
-    question: "AWS Consoleのモバイルアプリ紹介ページは？",
-    options: [
-      "https://aws.amazon.com/console/mobile/",
-      "https://mobile.aws.amazon.com/",
-      "https://aws.amazon.com/mobile-app/",
-      "https://console.aws.amazon.com/mobile/"
-    ],
-    correctAnswer: 2,
-    explanation: "AWS Consoleのモバイルアプリ紹介ページは https://aws.amazon.com/mobile-app/ です。モバイルアプリの紹介ページは通常と少し異なるパターンを使用しています。"
-  },
-  {
-    id: 29,
-    question: "AWS Supportのウェブサイトは？",
-    options: [
-      "https://aws.amazon.com/support/",
-      "https://support.aws.amazon.com/",
-      "https://console.aws.amazon.com/support/",
-      "https://amazon.com/aws-support/"
-    ],
-    correctAnswer: 0,
-    explanation: "AWS Supportのウェブサイトは https://aws.amazon.com/support/ です。サポートサービスの紹介ページは通常のパターンに従っています。一方、サポートセンターへのアクセスは https://console.aws.amazon.com/support/ になります。"
-  },
-  {
-    id: 30,
-    question: "AWS Eventのウェブサイトは？",
-    options: [
-      "https://aws.amazon.com/events/",
-      "https://events.aws.amazon.com/",
-      "https://aws.events/",
-      "https://amazon.com/aws-events/"
-    ],
-    correctAnswer: 0,
-    explanation: "AWS Eventのウェブサイトは https://aws.amazon.com/events/ です。イベント情報も通常のサービス紹介ページと同じパターンに従っています。"
-  },
-  {
-    id: 31,
-    question: "Amazon CloudFrontで配信するウェブサイトのデフォルトドメインは？",
-    options: [
-      "example.cloudfront.net",
-      "example.cloudfront.aws",
-      "example.cloudfront.amazon.com",
-      "example.cdn.amazonaws.com"
-    ],
-    correctAnswer: 0,
-    explanation: "Amazon CloudFrontで配信するウェブサイトのデフォルトドメインは [ディストリビューションID].cloudfront.net の形式です。このドメインは独自ドメインにCNAMEで置き換えることができます。"
-  },
-  {
-    id: 32,
-    question: "Amazon S3で静的ウェブサイトホスティングを使用する場合のデフォルトURLは？",
-    options: [
-      "bucket-name.s3.amazonaws.com",
-      "bucket-name.s3-website-region.amazonaws.com",
-      "bucket-name.s3.region.amazonaws.com",
-      "bucket-name.static.amazonaws.com"
-    ],
-    correctAnswer: 1,
-    explanation: "Amazon S3の静的ウェブサイトホスティングを使用する場合のデフォルトURLは bucket-name.s3-website-region.amazonaws.com または bucket-name.s3-website.region.amazonaws.com の形式です。これは通常のS3オブジェクトアクセスURL（bucket-name.s3.amazonaws.com）とは異なります。"
-  },
-  {
-    id: 33,
-    question: "AWS Amplifyでホストされるウェブアプリのデフォルトドメインは？",
-    options: [
-      "branch-name.app-id.amplify.aws",
-      "branch-name.app-id.amplifyapp.com",
-      "app-id.amplify.amazonaws.com",
-      "branch-name.amplify.amazon.com"
-    ],
-    correctAnswer: 1,
-    explanation: "AWS Amplifyでホストされるウェブアプリのデフォルトドメインは branch-name.app-id.amplifyapp.com の形式です。Amplifyでは、カスタムドメインを設定することも可能です。"
-  },
-  {
-    id: 34,
-    question: "Amazon API Gatewayで作成したAPIのデフォルトエンドポイントURLは？",
-    options: [
-      "api-id.execute-api.region.amazonaws.com",
-      "api-id.apigateway.region.amazonaws.com",
-      "api-id.api.aws.amazon.com",
-      "api-id.gateway.region.aws"
-    ],
-    correctAnswer: 0,
-    explanation: "Amazon API Gatewayで作成したAPIのデフォルトエンドポイントURLは api-id.execute-api.region.amazonaws.com の形式です。API Gatewayではカスタムドメイン名を設定することも可能です。"
-  },
-  {
-    id: 35,
-    question: "AWS Elastic Beanstalkアプリケーションのデフォルトドメインは？",
-    options: [
-      "environment-name.elasticbeanstalk.com",
-      "environment-name.region.elasticbeanstalk.com",
-      "environment-name.eb.amazonaws.com",
-      "app-name.elasticbeanstalk.region.amazonaws.com"
-    ],
-    correctAnswer: 1,
-    explanation: "AWS Elastic Beanstalkアプリケーションのデフォルトドメインは environment-name.region.elasticbeanstalk.com の形式です。Elastic Beanstalkでは、Route 53などを使用してカスタムドメインを設定することができます。"
-  },
-  {
-    id: 36,
-    question: "Amazon AppRunnerサービスのデフォルトドメインは？",
-    options: [
-      "service-id.apprunner.aws",
-      "service-id.apprunner.amazon.com",
-      "service-id.run.aws.amazon.com",
-      "service-id.awsapprunner.com"
-    ],
-    correctAnswer: 3,
-    explanation: "Amazon AppRunnerサービスのデフォルトドメインは service-id.awsapprunner.com の形式です。AppRunnerでもカスタムドメインを設定することが可能です。"
-  },
-  {
-    id: 37,
-    question: "AWS App Runnerサービスのカスタムドメインを設定するには、どのAWSサービスを使用しますか？",
-    options: [
-      "AWS Certificate Manager (ACM)のみ",
-      "Amazon Route 53のみ",
-      "AWS Certificate Manager (ACM)とAmazon Route 53の両方",
-      "AWS CloudFront"
-    ],
-    correctAnswer: 2,
-    explanation: "AWS App Runnerサービスにカスタムドメインを設定するには、通常AWS Certificate Manager (ACM)で証明書を発行し、Amazon Route 53でDNSレコードを設定します。両方のサービスを組み合わせて使用することで、安全なカスタムドメイン設定が可能になります。"
-  },
-  {
-    id: 38,
-    question: "Amazon LightsailのWordPressインスタンスのデフォルトドメインは？",
-    options: [
-      "instance-name.lightsail.aws",
-      "instance-name.lightsailapp.com",
-      "instance-name.region.lightsail.amazonaws.com",
-      "instance-public-ip.ip.aws.amazon.com"
-    ],
-    correctAnswer: 1,
-    explanation: "Amazon LightsailのWordPressインスタンスのデフォルトドメインは instance-name.lightsailapp.com の形式です。Lightsailでは、静的IPを割り当てたり、独自ドメインを設定したりすることも可能です。"
-  },
-  {
-    id: 39,
-    question: "AWS Amplify Hostingで独自ドメインを設定する際に必要なAWSサービスは？",
-    options: [
-      "Amazon Route 53のみ",
-      "AWS Certificate Manager (ACM)のみ",
-      "Amazon Route 53とAWS Certificate Manager (ACM)",
-      "AWS CloudFrontとAmazon S3"
-    ],
-    correctAnswer: 2,
-    explanation: "AWS Amplify Hostingで独自ドメインを設定するには、通常Amazon Route 53でドメインを管理し、AWS Certificate Manager (ACM)でSSL/TLS証明書を発行します。Amplifyコンソールからこれらのサービスと連携して設定を行います。"
-  },
-  {
-    id: 40,
-    question: "Amazon Cognito User Poolのホストされたログインページのデフォルトドメインは？",
-    options: [
-      "auth.region.amazoncognito.com",
-      "domain-prefix.auth.region.amazoncognito.com",
-      "cognito-idp.region.amazonaws.com",
-      "auth.cognito.region.aws.amazon.com"
-    ],
-    correctAnswer: 1,
-    explanation: "Amazon Cognito User Poolのホストされたログインページのデフォルトドメインは domain-prefix.auth.region.amazoncognito.com の形式です。Cognitoでは、独自ドメインを設定することも可能です。"
+    explanation: "Amazon MQのRabbitMQブローカーのエンドポイントは b-[一意のID].[リージョン].amazonaws.com の形式です。ブローカー名はエンドポイントに直接含まれません。"
   }
 ];
