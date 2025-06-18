@@ -166,17 +166,6 @@ const Quiz: React.FC<QuizProps> = ({ questions }) => {
             </button>
           ))}
         </div>
-        
-        <div className="controls">
-          <button
-            className="next-button"
-            onClick={() => setShowModal(true)}
-            disabled={selectedOption === null}
-            style={{ opacity: selectedOption === null ? 0.5 : 1 }}
-          >
-            解説を見る
-          </button>
-        </div>
       </div>
 
       {/* 統合モーダル */}

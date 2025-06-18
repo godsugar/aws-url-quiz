@@ -96,7 +96,6 @@ a {
   background: #1a2332;
   border-radius: 20px;
   padding: 1rem;
-  padding-bottom: 5rem;
   box-shadow: 
     0 20px 40px rgba(0, 0, 0, 0.4),
     0 0 0 1px rgba(192, 192, 192, 0.3);
@@ -107,7 +106,7 @@ a {
   height: 75vh;
   overflow: hidden;
   display: grid;
-  grid-template-rows: auto 140px 160px auto;
+  grid-template-rows: auto 140px 160px;
   grid-gap: 1rem;
   box-sizing: border-box;
   margin: 0 auto;
@@ -306,14 +305,7 @@ a {
   overflow-y: auto;
 }
 
-.controls {
-  position: absolute;
-  bottom: 1rem;
-  right: 1rem;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-}
+
 
 .next-button {
   padding: 1rem 2rem;
@@ -602,9 +594,8 @@ footer {
   
   .quiz-container {
     padding: 0.8rem;
-    padding-bottom: 5rem;
     height: 80vh;
-    grid-template-rows: auto 120px 240px auto;
+    grid-template-rows: auto 120px 240px;
   }
   
   .title {
@@ -634,11 +625,6 @@ footer {
   .option-label {
     margin-right: 0.6rem;
     font-size: 0.9rem;
-  }
-  
-  .controls {
-    bottom: 0.8rem;
-    right: 0.8rem;
   }
   
   .result {

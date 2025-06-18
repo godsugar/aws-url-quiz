@@ -239,7 +239,7 @@ export const quizQuestions: QuizQuestion[] = [
       "http://static-website.website.amazonaws.com"
     ],
     correctAnswer: 1,
-    explanation: "S3の静的ウェブサイトホスティングを有効にした場合のURLは http://[バケット名].s3-website-[リージョン].amazonaws.com または http://[バケット名].s3-website.[リージョン].amazonaws.com の形式です。HTTPSではなくHTTPであることに注意してください。"
+    explanation: "S3の静的ウェブサイトホスティングを有効にした場合のURLは http://[バケット名].s3-website-[リージョン].amazonaws.com または http://[バケット名].s3-website.[リージョン].amazonaws.com の形式です。S3の静的ウェブサイトホスティングはHTTPSをネイティブサポートしていないため、HTTPSが必要な場合はCloudFrontを使用する必要があります。"
   },
   {
     id: 18,
