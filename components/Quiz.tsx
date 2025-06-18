@@ -150,7 +150,6 @@ const Quiz: React.FC<QuizProps> = ({ questions }) => {
       </div>
 
       <div className="controls">
-        <div></div> {/* 空のdivでレイアウトを保持 */}
         <button
           className="next-button"
           onClick={handleNextQuestion}

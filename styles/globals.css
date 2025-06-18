@@ -96,6 +96,7 @@ a {
   background: #1a2332;
   border-radius: 20px;
   padding: 1rem;
+  padding-bottom: 4rem;
   box-shadow: 
     0 20px 40px rgba(0, 0, 0, 0.4),
     0 0 0 1px rgba(192, 192, 192, 0.3);
@@ -307,9 +308,11 @@ a {
 }
 
 .controls {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
   display: flex;
-  justify-content: space-between;
-  margin-top: 0.8rem;
+  justify-content: flex-end;
   align-items: center;
   flex-shrink: 0;
 }
@@ -448,6 +451,7 @@ footer {
   
   .quiz-container {
     padding: 0.8rem;
+    padding-bottom: 4rem;
     height: 80vh;
   }
   
@@ -486,9 +490,8 @@ footer {
   }
   
   .controls {
-    flex-direction: column;
-    gap: 0.6rem;
-    margin-top: 0.6rem;
+    bottom: 0.8rem;
+    right: 0.8rem;
   }
   
   .result {
