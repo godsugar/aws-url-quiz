@@ -45,7 +45,7 @@ const Quiz: React.FC<QuizProps> = ({ questions }) => {
     // 結果表示後、自動的にモーダルを開く
     setTimeout(() => {
       setShowModal(true);
-    }, 500);
+    }, 300);
   };
 
   const handleNextQuestion = () => {
@@ -167,62 +167,71 @@ const Quiz: React.FC<QuizProps> = ({ questions }) => {
           ))}
         </div>
         
-        {/* 結果表示エリア - 固定の高さを確保 */}
-        <div className="result-area">
-          {showResult && (
-            <div
-              className={`result ${
-                selectedOption === currentQuestion.correctAnswer ? 'correct' : 'incorrect'
-              }`}
-            >
-              {selectedOption === currentQuestion.correctAnswer
-                ? '🎉 正解！'
-                : `❌ 不正解！正解は「${optionLabels[currentQuestion.correctAnswer]}: ${
-                    currentQuestion.options[currentQuestion.correctAnswer]
-                  }」です。`}
-            </div>
-          )}
-        </div>
-
         <div className="controls">
           <button
             className="next-button"
-            onClick={handleNextQuestion}
+            onClick={() => setShowModal(true)}
             disabled={selectedOption === null}
+            style={{ opacity: selectedOption === null ? 0.5 : 1 }}
           >
-            {currentQuestionIndex < shuffledQuestions.length - 1 ? '次の問題へ' : '結果を見る'}
+            解説を見る
           </button>
         </div>
       </div>
 
-      {/* モーダル */}
-      {showModal && currentQuestion.explanation && (
+      {/* 統合モーダル */}
+      {showModal && selectedOption !== null && (
         <div className="modal-overlay" onClick={() => setShowModal(false)}>
-          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+          <div className="modal-content result-modal" onClick={(e) => e.stopPropagation()}>
             <div className="modal-header">
-              <h3 className="modal-title">💡 解説</h3>
+              <div className={`result-status ${selectedOption === currentQuestion.correctAnswer ? 'correct' : 'incorrect'}`}>
+                {selectedOption === currentQuestion.correctAnswer ? (
+                  <span>🎉 正解！</span>
+                ) : (
+                  <span>❌ 不正解</span>
+                )}
+              </div>
               <button className="modal-close" onClick={() => setShowModal(false)}>
                 ×
               </button>
             </div>
-            <div className="modal-body">
-              <p>{currentQuestion.explanation}</p>
-              {currentQuestion.links && currentQuestion.links.length > 0 && (
-                <div className="modal-links">
-                  <h4>🔗 関連リンク</h4>
-                  {currentQuestion.links.map((link, index) => (
-                    <a
-                      key={index}
-                      href={link.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="modal-link"
-                    >
-                      {link.title}
-                    </a>
-                  ))}
-                </div>
-              )}
+            
+            {selectedOption !== currentQuestion.correctAnswer && (
+              <div className="correct-answer">
+                <strong>正解:</strong> {optionLabels[currentQuestion.correctAnswer]}: {currentQuestion.options[currentQuestion.correctAnswer]}
+              </div>
+            )}
+            
+            {currentQuestion.explanation && (
+              <div className="modal-body">
+                <h4>💡 解説</h4>
+                <p>{currentQuestion.explanation}</p>
+                {currentQuestion.links && currentQuestion.links.length > 0 && (
+                  <div className="modal-links">
+                    <h4>🔗 関連リンク</h4>
+                    {currentQuestion.links.map((link, index) => (
+                      <a
+                        key={index}
+                        href={link.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="modal-link"
+                      >
+                        {link.title}
+                      </a>
+                    ))}
+                  </div>
+                )}
+              </div>
+            )}
+            
+            <div className="modal-footer">
+              <button
+                className="next-question-button"
+                onClick={handleNextQuestion}
+              >
+                {currentQuestionIndex < shuffledQuestions.length - 1 ? '次の問題へ' : '結果を見る'}
+              </button>
             </div>
           </div>
         </div>

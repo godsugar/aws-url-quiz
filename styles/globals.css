@@ -107,7 +107,7 @@ a {
   height: 75vh;
   overflow: hidden;
   display: grid;
-  grid-template-rows: auto 140px 160px 1fr auto;
+  grid-template-rows: auto 140px 160px auto;
   grid-gap: 1rem;
   box-sizing: border-box;
   margin: 0 auto;
@@ -266,11 +266,7 @@ a {
   75% { transform: translateX(5px); }
 }
 
-.result-area {
-  height: 100%;
-  overflow-y: auto;
-  margin: 0;
-}
+
 
 .result {
   margin: 0;
@@ -488,8 +484,72 @@ a {
   text-decoration: underline;
 }
 
-.modal-link:last-child {
-  border-bottom: none;
+.result-modal {
+  max-width: 700px;
+}
+
+.result-status {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.result-status.correct {
+  color: #4caf50;
+}
+
+.result-status.incorrect {
+  color: #f44336;
+}
+
+.correct-answer {
+  background: rgba(244, 67, 54, 0.1);
+  border: 1px solid rgba(244, 67, 54, 0.3);
+  border-radius: 10px;
+  padding: 1rem;
+  margin: 1rem 0;
+  color: #ffffff;
+  font-size: 1rem;
+}
+
+.modal-footer {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(192, 192, 192, 0.3);
+  display: flex;
+  justify-content: center;
+}
+
+.next-question-button {
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, var(--accent-color), #357abd);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 5px 15px rgba(74, 144, 226, 0.3);
+}
+
+.next-question-button:hover {
+  background: linear-gradient(135deg, #357abd, var(--accent-color));
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(74, 144, 226, 0.4);
+}
+
+.modal-body h4 {
+  color: var(--accent-color);
+  margin-bottom: 1rem;
+  margin-top: 1.5rem;
+  font-size: 1.2rem;
+}
+
+.modal-body h4:first-child {
+  margin-top: 0;
 }
 
 .perfect-score {
@@ -544,7 +604,7 @@ footer {
     padding: 0.8rem;
     padding-bottom: 5rem;
     height: 80vh;
-    grid-template-rows: auto 120px 240px 1fr auto;
+    grid-template-rows: auto 120px 240px auto;
   }
   
   .title {
@@ -615,6 +675,24 @@ footer {
   
   .modal-body {
     font-size: 0.9rem;
+  }
+  
+  .result-status {
+    font-size: 1.2rem;
+  }
+  
+  .correct-answer {
+    font-size: 0.9rem;
+    padding: 0.8rem;
+  }
+  
+  .next-question-button {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+  }
+  
+  .modal-body h4 {
+    font-size: 1.1rem;
   }
   
   /* スマホでのタイトル調整 */
