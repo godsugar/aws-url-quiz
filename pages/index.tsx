@@ -37,7 +37,7 @@ const Home: NextPage<HomeProps> = ({ questions }) => {
           }}>
             🏆 AWS URLクイズ 🏆
           </h1>
-          <p style={{ 
+          <p className="description" style={{ 
             fontSize: '0.8rem', 
             color: 'rgba(255, 255, 255, 0.9)', 
             maxWidth: '500px',
@@ -45,7 +45,7 @@ const Home: NextPage<HomeProps> = ({ questions }) => {
             lineHeight: '1.2',
             textShadow: '1px 1px 2px rgba(0, 0, 0, 0.7)'
           }}>
-            AWSの各種サービスのURLパターンに関する知識を試すクイズです
+            AWSの各種サービスのURLに関する知識を試すクイズです
           </p>
         </div>
         <Quiz questions={questions} />
