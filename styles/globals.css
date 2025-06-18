@@ -482,6 +482,27 @@ a {
   margin-top: 2rem;
 }
 
+/* スコア表示のモバイル対応 */
+@media screen and (max-width: 768px) {
+  .summary p {
+    font-size: 1.6rem !important;
+  }
+  
+  .summary p:first-child {
+    font-size: 1.8rem !important;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .summary p {
+    font-size: 1.4rem !important;
+  }
+  
+  .summary p:first-child {
+    font-size: 1.6rem !important;
+  }
+}
+
 .share-button {
   padding: 1rem 2rem;
   background: linear-gradient(135deg, #1da1f2, #0d8bd9);

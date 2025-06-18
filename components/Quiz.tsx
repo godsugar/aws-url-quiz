@@ -136,8 +136,8 @@ const Quiz: React.FC<QuizProps> = ({ questions }) => {
       <div className="quiz-container">
         <h2 className="title" style={{ color: '#ffffff' }}>🏆 クイズ終了！ 🏆</h2>
         <div className="summary">
-          <p style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>あなたのスコア: {score} / {shuffledQuestions.length}</p>
-          <p style={{ fontSize: '1.3rem', marginBottom: '2rem' }}>正答率: {percentage}%</p>
+          <p style={{ fontSize: '2rem', marginBottom: '1rem', fontWeight: 'bold' }}>あなたのスコア: {score} / {shuffledQuestions.length}</p>
+          <p style={{ fontSize: '1.6rem', marginBottom: '2rem', fontWeight: '600' }}>正答率: {percentage}%</p>
           {score === shuffledQuestions.length ? (
             <p className="perfect-score">🎉 満点おめでとうございます！ 🎉<br />AWS URLパターンの達人です！</p>
           ) : score >= shuffledQuestions.length * 0.8 ? (
