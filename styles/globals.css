@@ -96,6 +96,7 @@ a {
   background: #1a2332;
   border-radius: 20px;
   padding: 1rem;
+  padding-bottom: 5rem;
   box-shadow: 
     0 20px 40px rgba(0, 0, 0, 0.4),
     0 0 0 1px rgba(192, 192, 192, 0.3);
@@ -106,7 +107,7 @@ a {
   height: 75vh;
   overflow: hidden;
   display: grid;
-  grid-template-rows: auto 140px 160px;
+  grid-template-rows: auto 180px 140px auto;
   grid-gap: 1rem;
   box-sizing: border-box;
   margin: 0 auto;
@@ -151,12 +152,12 @@ a {
   color: var(--text-color);
   text-align: center;
   background: #2a3441;
-  padding: 1rem;
+  padding: 1.2rem;
   border-radius: 15px;
   border: 1px solid rgba(192, 192, 192, 0.3);
   line-height: 1.4;
   font-weight: 500;
-  height: 140px;
+  height: 180px;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
@@ -169,7 +170,7 @@ a {
   grid-template-columns: 1fr 1fr;
   gap: 0.6rem;
   margin: 0;
-  height: 160px;
+  height: 140px;
   box-sizing: border-box;
 }
 
@@ -187,7 +188,7 @@ a {
   position: relative;
   overflow: hidden;
   text-align: left;
-  height: 70px;
+  height: 60px;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -367,6 +368,42 @@ a {
   background: linear-gradient(135deg, #0d8bd9, #1da1f2);
   transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(29, 161, 242, 0.4);
+}
+
+.controls {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.next-button {
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, var(--accent-color), #357abd);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 5px 15px rgba(74, 144, 226, 0.3);
+}
+
+.next-button:hover:not(:disabled) {
+  background: linear-gradient(135deg, #357abd, var(--accent-color));
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(74, 144, 226, 0.4);
+}
+
+.next-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
 }
 
 .restart-button {
@@ -594,8 +631,9 @@ footer {
   
   .quiz-container {
     padding: 0.8rem;
+    padding-bottom: 5rem;
     height: 80vh;
-    grid-template-rows: auto 120px 240px;
+    grid-template-rows: auto 140px 200px auto;
   }
   
   .title {
@@ -605,21 +643,26 @@ footer {
   
   .question {
     font-size: 1.1rem;
-    padding: 0.8rem;
-    height: 120px;
+    padding: 1rem;
+    height: 140px;
   }
   
   .options {
     grid-template-columns: 1fr;
     gap: 0.5rem;
-    height: 240px;
+    height: 200px;
   }
   
   .option-button {
     padding: 0.6rem;
     font-size: 0.8rem;
-    height: 55px;
+    height: 45px;
     padding-left: 1rem;
+  }
+  
+  .controls {
+    bottom: 0.8rem;
+    right: 0.8rem;
   }
   
   .option-label {
