@@ -10,11 +10,9 @@ const nextConfig = {
   basePath: process.env.NODE_ENV === 'production' && process.env.NEXT_PUBLIC_BASE_PATH ? process.env.NEXT_PUBLIC_BASE_PATH : '',
   // 静的エクスポート用の設定（Next.js 15+）
   output: 'export',
-  // Next.js 15の新機能
-  experimental: {
-    turbo: {
-      // Turbopackの最適化
-    }
+  // Turbopack設定（Next.js 15で安定化）
+  turbopack: {
+    // Turbopackの最適化設定
   }
 }
 
