@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { QuizQuestion } from '../data/quizData';
 
 interface QuizProps {
@@ -6,6 +6,7 @@ interface QuizProps {
 }
 
 const Quiz: React.FC<QuizProps> = ({ questions }) => {
+  const [shuffledQuestions, setShuffledQuestions] = useState<QuizQuestion[]>([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [score, setScore] = useState(0);
   const [selectedOption, setSelectedOption] = useState<number | null>(null);
@@ -13,7 +14,23 @@ const Quiz: React.FC<QuizProps> = ({ questions }) => {
   const [quizCompleted, setQuizCompleted] = useState(false);
   const [showModal, setShowModal] = useState(false);
 
-  const currentQuestion = questions[currentQuestionIndex];
+  // 配列をシャッフルする関数
+  const shuffleArray = (array: QuizQuestion[]) => {
+    const shuffled = [...array];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    return shuffled;
+  };
+
+  // 初回マウント時に問題をシャッフル
+  useEffect(() => {
+    const shuffled = shuffleArray(questions).slice(0, 10); // 10問をランダム選択
+    setShuffledQuestions(shuffled);
+  }, [questions]);
+
+  const currentQuestion = shuffledQuestions[currentQuestionIndex];
 
   const handleOptionClick = (optionIndex: number) => {
     if (selectedOption !== null) return; // 既に回答済みの場合は何もしない
@@ -32,7 +49,7 @@ const Quiz: React.FC<QuizProps> = ({ questions }) => {
   };
 
   const handleNextQuestion = () => {
-    if (currentQuestionIndex < questions.length - 1) {
+    if (currentQuestionIndex < shuffledQuestions.length - 1) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
       setSelectedOption(null);
       setShowResult(false);
@@ -43,6 +60,8 @@ const Quiz: React.FC<QuizProps> = ({ questions }) => {
   };
 
   const restartQuiz = () => {
+    const shuffled = shuffleArray(questions).slice(0, 10); // 新しい10問をランダム選択
+    setShuffledQuestions(shuffled);
     setCurrentQuestionIndex(0);
     setScore(0);
     setSelectedOption(null);
@@ -55,15 +74,15 @@ const Quiz: React.FC<QuizProps> = ({ questions }) => {
   const optionLabels = ['A', 'B', 'C', 'D'];
 
   if (quizCompleted) {
-    const percentage = Math.round((score / questions.length) * 100);
+    const percentage = Math.round((score / shuffledQuestions.length) * 100);
     
     // X（Twitter）共有用のテキスト
-    const shareText = `AWS URLクイズに挑戦しました！\n結果: ${score}/${questions.length}問正解 (${percentage}%)\n\n${
-      score === questions.length 
+    const shareText = `AWS URLクイズに挑戦しました！\n結果: ${score}/${shuffledQuestions.length}問正解 (${percentage}%)\n\n${
+      score === shuffledQuestions.length 
         ? '🎉 満点達成！AWS URLパターンの達人です！' 
-        : score >= questions.length * 0.8 
+        : score >= shuffledQuestions.length * 0.8 
         ? '✨ 素晴らしい成績です！' 
-        : score >= questions.length * 0.6 
+        : score >= shuffledQuestions.length * 0.6 
         ? '👍 良い成績です！' 
         : '📚 もう少し学習が必要ですね。'
     }\n\n#AWS #クイズ #学習`;
@@ -74,13 +93,13 @@ const Quiz: React.FC<QuizProps> = ({ questions }) => {
       <div className="quiz-container">
         <h2 className="title">🏆 クイズ終了！ 🏆</h2>
         <div className="summary">
-          <p style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>あなたのスコア: {score} / {questions.length}</p>
+          <p style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>あなたのスコア: {score} / {shuffledQuestions.length}</p>
           <p style={{ fontSize: '1.3rem', marginBottom: '2rem' }}>正答率: {percentage}%</p>
-          {score === questions.length ? (
-            <p className="perfect-score">🎉 満点おめでとうございます！ 🎉<br />AWSドメインパターンの達人です！</p>
-          ) : score >= questions.length * 0.8 ? (
+          {score === shuffledQuestions.length ? (
+            <p className="perfect-score">🎉 満点おめでとうございます！ 🎉<br />AWS URLパターンの達人です！</p>
+          ) : score >= shuffledQuestions.length * 0.8 ? (
             <p className="good-score">✨ 素晴らしい成績です！<br />AWSのURLパターンについてよく理解しています！</p>
-          ) : score >= questions.length * 0.6 ? (
+          ) : score >= shuffledQuestions.length * 0.6 ? (
             <p className="average-score">👍 良い成績です！<br />もう少しAWSのURLパターンについて学びましょう！</p>
           ) : (
             <p className="low-score">📚 AWSのURLパターンについて<br />もう少し学習しましょう。</p>
@@ -102,12 +121,25 @@ const Quiz: React.FC<QuizProps> = ({ questions }) => {
     );
   }
 
+  // 問題がまだシャッフルされていない場合のローディング表示
+  if (shuffledQuestions.length === 0) {
+    return (
+      <div className="quiz-container">
+        <div className="question">
+          <div style={{ fontSize: '1.2rem', color: '#4a90e2' }}>
+            問題を準備中...
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <>
       <div className="quiz-container">
         <div className="question">
           <div style={{ marginBottom: '1rem', fontSize: '1.2rem', color: '#4a90e2' }}>
-            問題 {currentQuestionIndex + 1} / {questions.length}
+            問題 {currentQuestionIndex + 1} / {shuffledQuestions.length}
           </div>
           {currentQuestion.question}
         </div>
@@ -158,7 +190,7 @@ const Quiz: React.FC<QuizProps> = ({ questions }) => {
             onClick={handleNextQuestion}
             disabled={selectedOption === null}
           >
-            {currentQuestionIndex < questions.length - 1 ? '次の問題へ' : '結果を見る'}
+            {currentQuestionIndex < shuffledQuestions.length - 1 ? '次の問題へ' : '結果を見る'}
           </button>
         </div>
       </div>
