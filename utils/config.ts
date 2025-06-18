@@ -10,8 +10,8 @@ export const getAppUrl = (): string => {
     return 'http://localhost:3000';
   }
   
-  // フォールバック（本番環境でも環境変数が設定されていない場合）
-  return 'https://godsugar.github.io/aws-url-quiz';
+  // 本番環境では環境変数が必須
+  return '';
 };
 
 // GitHubリポジトリのURL設定
@@ -21,8 +21,8 @@ export const getGitHubUrl = (): string => {
     return process.env.NEXT_PUBLIC_GITHUB_URL;
   }
   
-  // フォールバック
-  return 'https://github.com/godsugar/aws-url-quiz';
+  // 本番環境では環境変数が必須
+  return '';
 };
 
 export const APP_URL = getAppUrl();
