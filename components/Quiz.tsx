@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { QuizQuestion } from '../data/quizData';
 import { APP_URL } from '../utils/config';
 
@@ -16,21 +16,28 @@ const Quiz: React.FC<QuizProps> = ({ questions }) => {
   const [showModal, setShowModal] = useState(false);
   const [shuffleKey, setShuffleKey] = useState(0); // シャッフルを強制するためのキー
 
-  // 配列をシャッフルする関数
-  const shuffleArray = (array: QuizQuestion[]) => {
+  // 配列をシャッフルする関数（より強力なランダム化）
+  const shuffleArray = useCallback((array: QuizQuestion[]) => {
     const shuffled = [...array];
-    for (let i = shuffled.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    
+    // より多くのシャッフル回数で確実にランダム化
+    for (let round = 0; round < 5; round++) {
+      for (let i = shuffled.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+      }
     }
+    
     return shuffled;
-  };
+  }, [shuffleKey]); // shuffleKeyが変更されるたびに新しい関数を作成
 
-  // 初回マウント時に問題をシャッフル
+  // 初回マウント時と再開時に問題をシャッフル
   useEffect(() => {
+    console.log('Shuffling questions, shuffleKey:', shuffleKey); // デバッグ用
     const shuffled = shuffleArray(questions).slice(0, 10); // 10問をランダム選択
+    console.log('Selected questions:', shuffled.map(q => q.id)); // デバッグ用
     setShuffledQuestions(shuffled);
-  }, [questions, shuffleKey]); // shuffleKeyを依存配列に追加
+  }, [questions, shuffleKey, shuffleArray]);
 
   const currentQuestion = shuffledQuestions[currentQuestionIndex];
 
@@ -62,14 +69,24 @@ const Quiz: React.FC<QuizProps> = ({ questions }) => {
   };
 
   const restartQuiz = () => {
-    // シャッフルキーを更新して強制的に再シャッフル
-    setShuffleKey(prev => prev + 1);
+    console.log('Restarting quiz...'); // デバッグ用
+    
+    // 状態をリセット
     setCurrentQuestionIndex(0);
     setScore(0);
     setSelectedOption(null);
     setShowResult(false);
     setQuizCompleted(false);
     setShowModal(false);
+    
+    // 少し遅延を入れてからシャッフルキーを更新（確実に再レンダリングを発生させる）
+    setTimeout(() => {
+      setShuffleKey(prev => {
+        const newKey = prev + 1;
+        console.log('Updated shuffleKey:', newKey); // デバッグ用
+        return newKey;
+      });
+    }, 10);
   };
 
   // URLを自動的にリンクに変換する関数
