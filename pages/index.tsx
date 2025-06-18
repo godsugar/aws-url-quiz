@@ -37,14 +37,13 @@ const Home: NextPage<HomeProps> = ({ questions }) => {
 
 export const getStaticProps: GetStaticProps = async () => {
   // SSGでビルド時にクイズデータを取得
-  // 実際のアプリケーションでは、外部APIやデータベースからデータを取得することもできます
-  
-  // クイズの順番をランダムに並び替え
+  // 全問題からランダムに10問を選択
   const shuffledQuestions = [...quizQuestions].sort(() => Math.random() - 0.5);
+  const selectedQuestions = shuffledQuestions.slice(0, 10);
   
   return {
     props: {
-      questions: shuffledQuestions,
+      questions: selectedQuestions,
     },
   };
 };
