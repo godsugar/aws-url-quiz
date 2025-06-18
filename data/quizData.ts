@@ -4,6 +4,10 @@ export interface QuizQuestion {
   options: string[];
   correctAnswer: number;
   explanation?: string;
+  links?: {
+    title: string;
+    url: string;
+  }[];
 }
 
 export const quizQuestions: QuizQuestion[] = [
@@ -18,7 +22,17 @@ export const quizQuestions: QuizQuestion[] = [
       "https://amazon.com/s3/"
     ],
     correctAnswer: 2,
-    explanation: "S3のコンソールURLは https://console.aws.amazon.com/s3/ です。AWSのマネジメントコンソールは基本的に console.aws.amazon.com ドメインを使用しています。"
+    explanation: "S3のコンソールURLは https://console.aws.amazon.com/s3/ です。AWSのマネジメントコンソールは基本的に console.aws.amazon.com ドメインを使用しています。",
+    links: [
+      {
+        title: "Amazon S3 コンソール",
+        url: "https://console.aws.amazon.com/s3/"
+      },
+      {
+        title: "Amazon S3 ドキュメント",
+        url: "https://docs.aws.amazon.com/s3/"
+      }
+    ]
   },
   {
     id: 2,
@@ -30,7 +44,21 @@ export const quizQuestions: QuizQuestion[] = [
       "https://amazon.aws.com/lambda/"
     ],
     correctAnswer: 1,
-    explanation: "AWS Lambdaのコンソールは https://console.aws.amazon.com/lambda/ です。サービスページは aws.amazon.com/lambda/ ですが、コンソールは console.aws.amazon.com ドメインを使用します。"
+    explanation: "AWS Lambdaのコンソールは https://console.aws.amazon.com/lambda/ です。サービスページは aws.amazon.com/lambda/ ですが、コンソールは console.aws.amazon.com ドメインを使用します。",
+    links: [
+      {
+        title: "AWS Lambda コンソール",
+        url: "https://console.aws.amazon.com/lambda/"
+      },
+      {
+        title: "AWS Lambda サービスページ",
+        url: "https://aws.amazon.com/lambda/"
+      },
+      {
+        title: "AWS Lambda ドキュメント",
+        url: "https://docs.aws.amazon.com/lambda/"
+      }
+    ]
   },
   {
     id: 3,

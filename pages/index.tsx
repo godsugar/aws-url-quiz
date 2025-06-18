@@ -34,7 +34,7 @@ const Home: NextPage<HomeProps> = ({ questions }) => {
             marginBottom: '0.5rem',
             letterSpacing: '1px'
           }}>
-            🏆 AWS ドメインパターンクイズ 🏆
+            🏆 AWS URLクイズ 🏆
           </h1>
           <p style={{ 
             fontSize: '0.8rem', 
@@ -44,7 +44,7 @@ const Home: NextPage<HomeProps> = ({ questions }) => {
             lineHeight: '1.2',
             textShadow: '1px 1px 2px rgba(0, 0, 0, 0.7)'
           }}>
-            AWSの各種サービスのドメインパターンやURLの知識を試すクイズです
+            AWSの各種サービスのURLパターンに関する知識を試すクイズです
           </p>
         </div>
         <Quiz questions={questions} />
