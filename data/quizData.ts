@@ -368,5 +368,365 @@ export const quizQuestions: QuizQuestion[] = [
     ],
     correctAnswer: 1,
     explanation: "Amazon OpenSearchのドメインエンドポイントは https://[ドメイン名].opensearch.[リージョン].amazonaws.com の形式です。"
+  },
+  {
+    id: 31,
+    question: "AWS Systems Managerのコンソールページは？",
+    options: [
+      "https://console.aws.amazon.com/systems-manager/",
+      "https://console.aws.amazon.com/ssm/",
+      "https://ssm.aws.amazon.com/",
+      "https://systems-manager.amazon.com/"
+    ],
+    correctAnswer: 1,
+    explanation: "AWS Systems ManagerのコンソールページはSSMの略称を使用して https://console.aws.amazon.com/ssm/ です。"
+  },
+  {
+    id: 32,
+    question: "Amazon EventBridgeのコンソールページは？",
+    options: [
+      "https://console.aws.amazon.com/eventbridge/",
+      "https://console.aws.amazon.com/events/",
+      "https://eventbridge.aws.amazon.com/",
+      "https://events.amazon.com/"
+    ],
+    correctAnswer: 1,
+    explanation: "Amazon EventBridgeのコンソールページは https://console.aws.amazon.com/events/ です。EventBridgeは以前のCloudWatch Eventsの後継サービスです。"
+  },
+  {
+    id: 33,
+    question: "AWS CodeCommitのコンソールページは？",
+    options: [
+      "https://console.aws.amazon.com/codecommit/",
+      "https://codecommit.aws.amazon.com/",
+      "https://git.aws.amazon.com/",
+      "https://console.aws.amazon.com/code-commit/"
+    ],
+    correctAnswer: 0,
+    explanation: "AWS CodeCommitのコンソールページは https://console.aws.amazon.com/codecommit/ です。"
+  },
+  {
+    id: 34,
+    question: "Amazon Redshiftクラスター「data-warehouse」のエンドポイントは？（リージョン：us-west-2）",
+    options: [
+      "data-warehouse.redshift.us-west-2.amazonaws.com",
+      "data-warehouse.abcdef.us-west-2.redshift.amazonaws.com",
+      "redshift.us-west-2.amazonaws.com/data-warehouse",
+      "us-west-2.redshift.amazonaws.com/data-warehouse"
+    ],
+    correctAnswer: 1,
+    explanation: "Amazon Redshiftクラスターのエンドポイントは [クラスター名].[一意のID].[リージョン].redshift.amazonaws.com の形式です。"
+  },
+  {
+    id: 35,
+    question: "AWS Batch「job-queue」のコンソールページは？",
+    options: [
+      "https://console.aws.amazon.com/batch/",
+      "https://batch.aws.amazon.com/",
+      "https://console.aws.amazon.com/aws-batch/",
+      "https://aws-batch.amazon.com/"
+    ],
+    correctAnswer: 0,
+    explanation: "AWS Batchのコンソールページは https://console.aws.amazon.com/batch/ です。"
+  },
+  {
+    id: 36,
+    question: "Amazon Kinesis Data Streamsのストリーム「user-activity」にアクセスするAPIエンドポイントは？（リージョン：ap-northeast-1）",
+    options: [
+      "https://kinesis.ap-northeast-1.amazonaws.com",
+      "https://user-activity.kinesis.ap-northeast-1.amazonaws.com",
+      "https://streams.kinesis.ap-northeast-1.amazonaws.com",
+      "https://ap-northeast-1.kinesis.amazonaws.com/user-activity"
+    ],
+    correctAnswer: 0,
+    explanation: "Amazon Kinesis Data StreamsのAPIエンドポイントは https://kinesis.[リージョン].amazonaws.com の形式です。ストリーム名はAPIリクエストのパラメータとして指定します。"
+  },
+  {
+    id: 37,
+    question: "AWS X-Rayのコンソールページは？",
+    options: [
+      "https://console.aws.amazon.com/xray/",
+      "https://xray.aws.amazon.com/",
+      "https://console.aws.amazon.com/x-ray/",
+      "https://aws-xray.amazon.com/"
+    ],
+    correctAnswer: 0,
+    explanation: "AWS X-Rayのコンソールページは https://console.aws.amazon.com/xray/ です。"
+  },
+  {
+    id: 38,
+    question: "Amazon SNSトピック「notifications」のARNは？（アカウントID：123456789012、リージョン：eu-central-1）",
+    options: [
+      "arn:aws:sns:eu-central-1:123456789012:notifications",
+      "https://sns.eu-central-1.amazonaws.com/123456789012/notifications",
+      "sns://eu-central-1.amazonaws.com/123456789012/notifications",
+      "https://notifications.sns.eu-central-1.amazonaws.com"
+    ],
+    correctAnswer: 0,
+    explanation: "Amazon SNSトピックのARNは arn:aws:sns:[リージョン]:[アカウントID]:[トピック名] の形式です。これはURLではなくAmazon Resource Name（ARN）です。"
+  },
+  {
+    id: 39,
+    question: "AWS CloudTrailのコンソールページは？",
+    options: [
+      "https://console.aws.amazon.com/cloudtrail/",
+      "https://cloudtrail.aws.amazon.com/",
+      "https://console.aws.amazon.com/cloud-trail/",
+      "https://trail.aws.amazon.com/"
+    ],
+    correctAnswer: 0,
+    explanation: "AWS CloudTrailのコンソールページは https://console.aws.amazon.com/cloudtrail/ です。"
+  },
+  {
+    id: 40,
+    question: "Amazon EFS「file-system-1」のマウントターゲットは？（リージョン：us-east-1）",
+    options: [
+      "file-system-1.efs.us-east-1.amazonaws.com",
+      "fs-12345678.efs.us-east-1.amazonaws.com",
+      "efs.us-east-1.amazonaws.com/file-system-1",
+      "us-east-1.efs.amazonaws.com/fs-12345678"
+    ],
+    correctAnswer: 1,
+    explanation: "Amazon EFSのマウントターゲットは fs-[ファイルシステムID].efs.[リージョン].amazonaws.com の形式です。ファイルシステム名ではなく、AWSが生成するIDが使用されます。"
+  },
+  {
+    id: 41,
+    question: "AWS Config のコンソールページは？",
+    options: [
+      "https://console.aws.amazon.com/config/",
+      "https://config.aws.amazon.com/",
+      "https://console.aws.amazon.com/aws-config/",
+      "https://aws-config.amazon.com/"
+    ],
+    correctAnswer: 0,
+    explanation: "AWS Config のコンソールページは https://console.aws.amazon.com/config/ です。"
+  },
+  {
+    id: 42,
+    question: "Amazon WorkSpaces「workspace-12345」のアクセスURLは？",
+    options: [
+      "https://workspace-12345.workspaces.amazonaws.com",
+      "https://clients.amazonworkspaces.com",
+      "https://workspaces.aws.amazon.com/workspace-12345",
+      "https://12345.workspaces.amazonaws.com"
+    ],
+    correctAnswer: 1,
+    explanation: "Amazon WorkSpacesのクライアントアクセスURLは https://clients.amazonworkspaces.com です。個別のワークスペースIDはクライアント内で指定します。"
+  },
+  {
+    id: 43,
+    question: "AWS Secrets Manager「prod/database/credentials」のシークレットにアクセスするAPIエンドポイントは？（リージョン：ca-central-1）",
+    options: [
+      "https://secretsmanager.ca-central-1.amazonaws.com",
+      "https://secrets.ca-central-1.amazonaws.com",
+      "https://prod-database-credentials.secretsmanager.ca-central-1.amazonaws.com",
+      "https://ca-central-1.secretsmanager.amazonaws.com"
+    ],
+    correctAnswer: 0,
+    explanation: "AWS Secrets ManagerのAPIエンドポイントは https://secretsmanager.[リージョン].amazonaws.com の形式です。シークレット名はAPIリクエストのパラメータとして指定します。"
+  },
+  {
+    id: 44,
+    question: "Amazon Athenaのコンソールページは？",
+    options: [
+      "https://console.aws.amazon.com/athena/",
+      "https://athena.aws.amazon.com/",
+      "https://console.aws.amazon.com/amazon-athena/",
+      "https://query.aws.amazon.com/"
+    ],
+    correctAnswer: 0,
+    explanation: "Amazon Athenaのコンソールページは https://console.aws.amazon.com/athena/ です。"
+  },
+  {
+    id: 45,
+    question: "AWS CodePipelineのコンソールページは？",
+    options: [
+      "https://console.aws.amazon.com/codepipeline/",
+      "https://codepipeline.aws.amazon.com/",
+      "https://console.aws.amazon.com/code-pipeline/",
+      "https://pipeline.aws.amazon.com/"
+    ],
+    correctAnswer: 0,
+    explanation: "AWS CodePipelineのコンソールページは https://console.aws.amazon.com/codepipeline/ です。"
+  },
+  {
+    id: 46,
+    question: "Amazon GameLiftのコンソールページは？",
+    options: [
+      "https://console.aws.amazon.com/gamelift/",
+      "https://gamelift.aws.amazon.com/",
+      "https://console.aws.amazon.com/game-lift/",
+      "https://gaming.aws.amazon.com/"
+    ],
+    correctAnswer: 0,
+    explanation: "Amazon GameLiftのコンソールページは https://console.aws.amazon.com/gamelift/ です。"
+  },
+  {
+    id: 47,
+    question: "AWS Device Farmのコンソールページは？",
+    options: [
+      "https://console.aws.amazon.com/devicefarm/",
+      "https://devicefarm.aws.amazon.com/",
+      "https://console.aws.amazon.com/device-farm/",
+      "https://testing.aws.amazon.com/"
+    ],
+    correctAnswer: 0,
+    explanation: "AWS Device Farmのコンソールページは https://console.aws.amazon.com/devicefarm/ です。"
+  },
+  {
+    id: 48,
+    question: "Amazon Chime SDKのドキュメントページは？",
+    options: [
+      "https://docs.aws.amazon.com/chime-sdk/",
+      "https://chime-sdk.aws.amazon.com/",
+      "https://docs.aws.amazon.com/chime/",
+      "https://sdk.chime.aws.amazon.com/"
+    ],
+    correctAnswer: 0,
+    explanation: "Amazon Chime SDKのドキュメントページは https://docs.aws.amazon.com/chime-sdk/ です。AWSドキュメントは docs.aws.amazon.com ドメインを使用します。"
+  },
+  {
+    id: 49,
+    question: "AWS Well-Architected Toolのコンソールページは？",
+    options: [
+      "https://console.aws.amazon.com/wellarchitected/",
+      "https://wellarchitected.aws.amazon.com/",
+      "https://console.aws.amazon.com/well-architected/",
+      "https://architecture.aws.amazon.com/"
+    ],
+    correctAnswer: 0,
+    explanation: "AWS Well-Architected Toolのコンソールページは https://console.aws.amazon.com/wellarchitected/ です。"
+  },
+  {
+    id: 50,
+    question: "Amazon Textractのコンソールページは？",
+    options: [
+      "https://console.aws.amazon.com/textract/",
+      "https://textract.aws.amazon.com/",
+      "https://console.aws.amazon.com/amazon-textract/",
+      "https://ocr.aws.amazon.com/"
+    ],
+    correctAnswer: 0,
+    explanation: "Amazon Textractのコンソールページは https://console.aws.amazon.com/textract/ です。"
+  },
+  {
+    id: 51,
+    question: "AWS Transfer Familyのコンソールページは？",
+    options: [
+      "https://console.aws.amazon.com/transfer/",
+      "https://transfer.aws.amazon.com/",
+      "https://console.aws.amazon.com/aws-transfer/",
+      "https://ftp.aws.amazon.com/"
+    ],
+    correctAnswer: 0,
+    explanation: "AWS Transfer Familyのコンソールページは https://console.aws.amazon.com/transfer/ です。"
+  },
+  {
+    id: 52,
+    question: "Amazon Comprehendのコンソールページは？",
+    options: [
+      "https://console.aws.amazon.com/comprehend/",
+      "https://comprehend.aws.amazon.com/",
+      "https://console.aws.amazon.com/amazon-comprehend/",
+      "https://nlp.aws.amazon.com/"
+    ],
+    correctAnswer: 0,
+    explanation: "Amazon Comprehendのコンソールページは https://console.aws.amazon.com/comprehend/ です。"
+  },
+  {
+    id: 53,
+    question: "AWS DataSyncのコンソールページは？",
+    options: [
+      "https://console.aws.amazon.com/datasync/",
+      "https://datasync.aws.amazon.com/",
+      "https://console.aws.amazon.com/data-sync/",
+      "https://sync.aws.amazon.com/"
+    ],
+    correctAnswer: 0,
+    explanation: "AWS DataSyncのコンソールページは https://console.aws.amazon.com/datasync/ です。"
+  },
+  {
+    id: 54,
+    question: "Amazon Rekognitionのコンソールページは？",
+    options: [
+      "https://console.aws.amazon.com/rekognition/",
+      "https://rekognition.aws.amazon.com/",
+      "https://console.aws.amazon.com/amazon-rekognition/",
+      "https://vision.aws.amazon.com/"
+    ],
+    correctAnswer: 0,
+    explanation: "Amazon Rekognitionのコンソールページは https://console.aws.amazon.com/rekognition/ です。"
+  },
+  {
+    id: 55,
+    question: "AWS Ground Stationのコンソールページは？",
+    options: [
+      "https://console.aws.amazon.com/groundstation/",
+      "https://groundstation.aws.amazon.com/",
+      "https://console.aws.amazon.com/ground-station/",
+      "https://satellite.aws.amazon.com/"
+    ],
+    correctAnswer: 0,
+    explanation: "AWS Ground Stationのコンソールページは https://console.aws.amazon.com/groundstation/ です。"
+  },
+  {
+    id: 56,
+    question: "Amazon Pollyのコンソールページは？",
+    options: [
+      "https://console.aws.amazon.com/polly/",
+      "https://polly.aws.amazon.com/",
+      "https://console.aws.amazon.com/amazon-polly/",
+      "https://tts.aws.amazon.com/"
+    ],
+    correctAnswer: 0,
+    explanation: "Amazon Pollyのコンソールページは https://console.aws.amazon.com/polly/ です。"
+  },
+  {
+    id: 57,
+    question: "AWS Snowball「job-12345」の追跡ページは？",
+    options: [
+      "https://console.aws.amazon.com/snowball/",
+      "https://snowball.aws.amazon.com/job-12345",
+      "https://tracking.aws.amazon.com/snowball/job-12345",
+      "https://console.aws.amazon.com/snow/"
+    ],
+    correctAnswer: 0,
+    explanation: "AWS Snowballの追跡はコンソールページ https://console.aws.amazon.com/snowball/ で行います。個別のジョブ追跡も同じコンソール内で管理されます。"
+  },
+  {
+    id: 58,
+    question: "Amazon Transcribeのコンソールページは？",
+    options: [
+      "https://console.aws.amazon.com/transcribe/",
+      "https://transcribe.aws.amazon.com/",
+      "https://console.aws.amazon.com/amazon-transcribe/",
+      "https://speech.aws.amazon.com/"
+    ],
+    correctAnswer: 0,
+    explanation: "Amazon Transcribeのコンソールページは https://console.aws.amazon.com/transcribe/ です。"
+  },
+  {
+    id: 59,
+    question: "AWS Organizationsのコンソールページは？",
+    options: [
+      "https://console.aws.amazon.com/organizations/",
+      "https://organizations.aws.amazon.com/",
+      "https://console.aws.amazon.com/aws-organizations/",
+      "https://accounts.aws.amazon.com/"
+    ],
+    correctAnswer: 0,
+    explanation: "AWS Organizationsのコンソールページは https://console.aws.amazon.com/organizations/ です。"
+  },
+  {
+    id: 60,
+    question: "Amazon Translate のコンソールページは？",
+    options: [
+      "https://console.aws.amazon.com/translate/",
+      "https://translate.aws.amazon.com/",
+      "https://console.aws.amazon.com/amazon-translate/",
+      "https://translation.aws.amazon.com/"
+    ],
+    correctAnswer: 0,
+    explanation: "Amazon Translate のコンソールページは https://console.aws.amazon.com/translate/ です。"
   }
 ];
