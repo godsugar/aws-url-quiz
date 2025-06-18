@@ -1,17 +1,15 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  swcMinify: true,
-  // GitHub Pages のベースパスを設定
-  // リポジトリ名が 'quiz-game-nextjs' の場合は '/quiz-game-nextjs' を設定
-  // ユーザーページ（username.github.io）の場合は空文字列 '' を設定
-  basePath: '/quiz-game-nextjs',
-  assetPrefix: '/quiz-game-nextjs',
-  // 静的エクスポートを有効化
   trailingSlash: true,
   images: {
-    unoptimized: true,
+    unoptimized: true
   },
-};
+  // GitHub Pages用の設定
+  assetPrefix: process.env.NODE_ENV === 'production' ? process.env.NEXT_PUBLIC_BASE_PATH || '' : '',
+  basePath: process.env.NODE_ENV === 'production' ? process.env.NEXT_PUBLIC_BASE_PATH || '' : '',
+  // 静的エクスポート用の設定
+  output: 'export'
+}
 
-module.exports = nextConfig;
+module.exports = nextConfig
