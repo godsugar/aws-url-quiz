@@ -48,6 +48,20 @@ const Quiz: React.FC<QuizProps> = ({ questions }) => {
 
   if (quizCompleted) {
     const percentage = Math.round((score / questions.length) * 100);
+    
+    // X（Twitter）共有用のテキスト
+    const shareText = `AWS ドメインパターンクイズに挑戦しました！\n結果: ${score}/${questions.length}問正解 (${percentage}%)\n\n${
+      score === questions.length 
+        ? '🎉 満点達成！AWSドメインパターンの達人です！' 
+        : score >= questions.length * 0.8 
+        ? '✨ 素晴らしい成績です！' 
+        : score >= questions.length * 0.6 
+        ? '👍 良い成績です！' 
+        : '📚 もう少し学習が必要ですね。'
+    }\n\n#AWS #クイズ #学習`;
+    
+    const shareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}`;
+    
     return (
       <div className="quiz-container">
         <h2 className="title">🏆 クイズ終了！ 🏆</h2>
@@ -63,9 +77,18 @@ const Quiz: React.FC<QuizProps> = ({ questions }) => {
           ) : (
             <p className="low-score">📚 AWSのドメインパターンについて<br />もう少し学習しましょう。</p>
           )}
-          <button className="restart-button" onClick={restartQuiz}>
-            もう一度挑戦する
-          </button>
+          
+          <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', marginTop: '1.5rem' }}>
+            <button 
+              className="share-button"
+              onClick={() => window.open(shareUrl, '_blank', 'width=550,height=420')}
+            >
+              🐦 結果をXで共有
+            </button>
+            <button className="restart-button" onClick={restartQuiz}>
+              もう一度挑戦する
+            </button>
+          </div>
         </div>
       </div>
     );
@@ -127,7 +150,7 @@ const Quiz: React.FC<QuizProps> = ({ questions }) => {
       </div>
 
       <div className="controls">
-        <div className="score">💰 スコア: {score}</div>
+        <div></div> {/* 空のdivでレイアウトを保持 */}
         <button
           className="next-button"
           onClick={handleNextQuestion}

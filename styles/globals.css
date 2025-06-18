@@ -353,6 +353,27 @@ a {
   margin-top: 2rem;
 }
 
+.share-button {
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, #1da1f2, #0d8bd9);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 5px 15px rgba(29, 161, 242, 0.3);
+}
+
+.share-button:hover {
+  background: linear-gradient(135deg, #0d8bd9, #1da1f2);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(29, 161, 242, 0.4);
+}
+
 .restart-button {
   padding: 1rem 2rem;
   background: linear-gradient(135deg, var(--secondary-color), #ff6600);
@@ -361,7 +382,7 @@ a {
   border-radius: 25px;
   font-size: 1.1rem;
   cursor: pointer;
-  margin-top: 1.5rem;
+  margin-top: 0;
   transition: all 0.3s ease;
   font-weight: bold;
   text-transform: uppercase;
@@ -480,8 +501,13 @@ footer {
     max-height: 60px;
   }
   
-  .next-button, .restart-button {
+  .next-button, .restart-button, .share-button {
     padding: 0.8rem 1.5rem;
     font-size: 1rem;
+  }
+  
+  .summary div {
+    flex-direction: column;
+    gap: 1rem;
   }
 }
