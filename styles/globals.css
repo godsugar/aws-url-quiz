@@ -577,6 +577,16 @@ a {
   font-size: 1.2rem;
 }
 
+.inline-link {
+  color: var(--accent-color);
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.inline-link:hover {
+  color: #ffffff;
+}
+
 .modal-body h4:first-child {
   margin-top: 0;
 }

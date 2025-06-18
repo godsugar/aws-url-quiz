@@ -13,6 +13,7 @@ const Quiz: React.FC<QuizProps> = ({ questions }) => {
   const [showResult, setShowResult] = useState(false);
   const [quizCompleted, setQuizCompleted] = useState(false);
   const [showModal, setShowModal] = useState(false);
+  const [shuffleKey, setShuffleKey] = useState(0); // シャッフルを強制するためのキー
 
   // 配列をシャッフルする関数
   const shuffleArray = (array: QuizQuestion[]) => {
@@ -28,7 +29,7 @@ const Quiz: React.FC<QuizProps> = ({ questions }) => {
   useEffect(() => {
     const shuffled = shuffleArray(questions).slice(0, 10); // 10問をランダム選択
     setShuffledQuestions(shuffled);
-  }, [questions]);
+  }, [questions, shuffleKey]); // shuffleKeyを依存配列に追加
 
   const currentQuestion = shuffledQuestions[currentQuestionIndex];
 
@@ -60,14 +61,41 @@ const Quiz: React.FC<QuizProps> = ({ questions }) => {
   };
 
   const restartQuiz = () => {
-    const shuffled = shuffleArray(questions).slice(0, 10); // 新しい10問をランダム選択
-    setShuffledQuestions(shuffled);
+    // シャッフルキーを更新して強制的に再シャッフル
+    setShuffleKey(prev => prev + 1);
     setCurrentQuestionIndex(0);
     setScore(0);
     setSelectedOption(null);
     setShowResult(false);
     setQuizCompleted(false);
     setShowModal(false);
+  };
+
+  // URLを自動的にリンクに変換する関数
+  const linkifyText = (text: string) => {
+    const urlRegex = /(https?:\/\/[^\s]+)/g;
+    const parts = text.split(urlRegex);
+    
+    return parts.map((part, index) => {
+      if (part.match(urlRegex)) {
+        // 仮置きの値を含むURLはリンクにしない
+        if (part.includes('[') || part.includes('example') || part.includes('your-') || part.includes('my-')) {
+          return <span key={index}>{part}</span>;
+        }
+        return (
+          <a
+            key={index}
+            href={part}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-link"
+          >
+            {part}
+          </a>
+        );
+      }
+      return <span key={index}>{part}</span>;
+    });
   };
 
   // オプションのラベル（A, B, C, D）
@@ -205,7 +233,7 @@ const Quiz: React.FC<QuizProps> = ({ questions }) => {
             {currentQuestion.explanation && (
               <div className="modal-body">
                 <h4>💡 解説</h4>
-                <p>{currentQuestion.explanation}</p>
+                <p>{linkifyText(currentQuestion.explanation)}</p>
                 {currentQuestion.links && currentQuestion.links.length > 0 && (
                   <div className="modal-links">
                     <h4>🔗 関連リンク</h4>

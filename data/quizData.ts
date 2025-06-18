@@ -378,18 +378,6 @@ export const quizQuestions: QuizQuestion[] = [
     explanation: "Amazon ECRのプライベートリポジトリのURLは [アカウントID].dkr.ecr.[リージョン].amazonaws.com/[リポジトリ名]:[タグ] の形式です。"
   },
   {
-    id: 27,
-    question: "AWS Cloud9環境「my-ide」のデフォルトURLは？（リージョン：eu-central-1）",
-    options: [
-      "https://my-ide.cloud9.eu-central-1.amazonaws.com",
-      "https://eu-central-1.console.aws.amazon.com/cloud9/my-ide",
-      "https://[環境ID].vfs.cloud9.eu-central-1.amazonaws.com",
-      "https://cloud9.eu-central-1.amazonaws.com/my-ide"
-    ],
-    correctAnswer: 2,
-    explanation: "AWS Cloud9環境のデフォルトURLは https://[環境ID].vfs.cloud9.[リージョン].amazonaws.com の形式です。環境IDは自動生成される一意の識別子です。"
-  },
-  {
     id: 28,
     question: "Amazon QuickSightのダッシュボード共有URLは？（アカウントID：123456789012、リージョン：us-west-2）",
     options: [
@@ -464,18 +452,6 @@ export const quizQuestions: QuizQuestion[] = [
     ]
   },
   {
-    id: 33,
-    question: "AWS CodeCommitのコンソールページは？",
-    options: [
-      "https://console.aws.amazon.com/codecommit/",
-      "https://codecommit.aws.amazon.com/",
-      "https://git.aws.amazon.com/",
-      "https://console.aws.amazon.com/code-commit/"
-    ],
-    correctAnswer: 0,
-    explanation: "AWS CodeCommitのコンソールページは https://console.aws.amazon.com/codecommit/ です。"
-  },
-  {
     id: 34,
     question: "Amazon Redshiftクラスター「data-warehouse」のエンドポイントは？（リージョン：us-west-2）",
     options: [
@@ -546,18 +522,6 @@ export const quizQuestions: QuizQuestion[] = [
     ],
     correctAnswer: 0,
     explanation: "AWS CloudTrailのコンソールページは https://console.aws.amazon.com/cloudtrail/ です。"
-  },
-  {
-    id: 40,
-    question: "Amazon EFS「file-system-1」のマウントターゲットは？（リージョン：us-east-1）",
-    options: [
-      "file-system-1.efs.us-east-1.amazonaws.com",
-      "fs-12345678.efs.us-east-1.amazonaws.com",
-      "efs.us-east-1.amazonaws.com/file-system-1",
-      "us-east-1.efs.amazonaws.com/fs-12345678"
-    ],
-    correctAnswer: 1,
-    explanation: "Amazon EFSのマウントターゲットは fs-[ファイルシステムID].efs.[リージョン].amazonaws.com の形式です。ファイルシステム名ではなく、AWSが生成するIDが使用されます。"
   },
   {
     id: 41,
