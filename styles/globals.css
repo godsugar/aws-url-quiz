@@ -187,6 +187,19 @@ a {
   box-sizing: border-box;
 }
 
+.option-label {
+  margin-right: 0.8rem;
+  font-weight: bold;
+  color: #ffd700;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.option-text {
+  color: #ffffff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
 .option-button::before {
   content: '';
   position: absolute;
@@ -215,10 +228,22 @@ a {
   animation: correctPulse 1s ease-in-out;
 }
 
+.option-button.correct .option-text {
+  color: #ffffff;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+  font-weight: 600;
+}
+
 .option-button.incorrect {
   background: linear-gradient(135deg, rgba(244, 67, 54, 0.8), rgba(244, 67, 54, 0.4));
   border-color: var(--error-color);
   animation: incorrectShake 0.5s ease-in-out;
+}
+
+.option-button.incorrect .option-text {
+  color: #ffffff;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+  font-weight: 600;
 }
 
 @keyframes correctPulse {
@@ -232,8 +257,16 @@ a {
   75% { transform: translateX(5px); }
 }
 
+.result-area {
+  min-height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-bottom: 0.8rem;
+}
+
 .result {
-  margin: 0.8rem 0;
+  margin: 0;
   padding: 0.8rem;
   border-radius: 15px;
   text-align: center;
@@ -418,6 +451,15 @@ footer {
     padding-left: 1rem;
   }
   
+  .option-label {
+    margin-right: 0.6rem;
+    font-size: 0.9rem;
+  }
+  
+  .result-area {
+    min-height: 100px;
+  }
+  
   .controls {
     flex-direction: column;
     gap: 0.6rem;
@@ -425,7 +467,7 @@ footer {
   }
   
   .result {
-    margin: 0.6rem 0;
+    margin: 0;
     padding: 0.6rem;
     font-size: 0.8rem;
   }

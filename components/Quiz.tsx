@@ -73,7 +73,6 @@ const Quiz: React.FC<QuizProps> = ({ questions }) => {
 
   return (
     <div className="quiz-container">
-      <h2 className="title">AWS ドメインパターンクイズ</h2>
       <div className="question">
         <div style={{ marginBottom: '1rem', fontSize: '1.2rem', color: '#ffd700' }}>
           問題 {currentQuestionIndex + 1} / {questions.length}
@@ -94,37 +93,39 @@ const Quiz: React.FC<QuizProps> = ({ questions }) => {
             onClick={() => handleOptionClick(index)}
             disabled={selectedOption !== null}
           >
-            <span style={{ 
-              marginRight: '1rem', 
-              fontWeight: 'bold', 
-              color: '#ffd700',
-              fontSize: '1.2rem'
-            }}>
+            <span className="option-label">
               {optionLabels[index]}:
             </span>
-            {option}
+            <span className="option-text">
+              {option}
+            </span>
           </button>
         ))}
       </div>
-      {showResult && (
-        <div
-          className={`result ${
-            selectedOption === currentQuestion.correctAnswer ? 'correct' : 'incorrect'
-          }`}
-        >
-          {selectedOption === currentQuestion.correctAnswer
-            ? '🎉 正解！'
-            : `❌ 不正解！正解は「${optionLabels[currentQuestion.correctAnswer]}: ${
-                currentQuestion.options[currentQuestion.correctAnswer]
-              }」です。`}
-          {currentQuestion.explanation && (
-            <div className="explanation">
-              <strong>💡 解説:</strong><br />
-              {currentQuestion.explanation}
-            </div>
-          )}
-        </div>
-      )}
+      
+      {/* 結果表示エリア - 固定の高さを確保 */}
+      <div className="result-area">
+        {showResult && (
+          <div
+            className={`result ${
+              selectedOption === currentQuestion.correctAnswer ? 'correct' : 'incorrect'
+            }`}
+          >
+            {selectedOption === currentQuestion.correctAnswer
+              ? '🎉 正解！'
+              : `❌ 不正解！正解は「${optionLabels[currentQuestion.correctAnswer]}: ${
+                  currentQuestion.options[currentQuestion.correctAnswer]
+                }」です。`}
+            {currentQuestion.explanation && (
+              <div className="explanation">
+                <strong>💡 解説:</strong><br />
+                {currentQuestion.explanation}
+              </div>
+            )}
+          </div>
+        )}
+      </div>
+
       <div className="controls">
         <div className="score">💰 スコア: {score}</div>
         <button
