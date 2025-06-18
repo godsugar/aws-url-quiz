@@ -93,7 +93,7 @@ a {
 }
 
 .quiz-container {
-  background: #1a2332;
+  background: rgba(26, 35, 50, 0.98); /* 透過率2%（98%不透明） */
   border-radius: 20px;
   padding: 1rem;
   padding-bottom: 5rem;
@@ -151,7 +151,7 @@ a {
   margin: 0;
   color: var(--text-color);
   text-align: center;
-  background: #2a3441;
+  background: rgba(42, 52, 65, 0.98); /* 透過率2% */
   padding: 1.2rem;
   border-radius: 15px;
   border: 1px solid rgba(192, 192, 192, 0.3);
@@ -178,7 +178,7 @@ a {
   padding: 0.8rem;
   border: 2px solid var(--millionaire-silver);
   border-radius: 15px;
-  background: linear-gradient(135deg, #2a3441, #1e2832);
+  background: linear-gradient(135deg, rgba(42, 52, 65, 0.98), rgba(30, 40, 50, 0.98)); /* 透過率2% */
   font-size: 0.85rem;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -438,7 +438,7 @@ a {
 }
 
 .modal-content {
-  background: #2a3441;
+  background: rgba(42, 52, 65, 0.98); /* 透過率2% */
   border-radius: 20px;
   padding: 2rem;
   max-width: 600px;
@@ -532,8 +532,8 @@ a {
 }
 
 .correct-answer {
-  background: rgba(244, 67, 54, 0.1);
-  border: 1px solid rgba(244, 67, 54, 0.3);
+  background: rgba(244, 67, 54, 0.15); /* 少し透過率を上げて視認性を保つ */
+  border: 1px solid rgba(244, 67, 54, 0.4);
   border-radius: 10px;
   padding: 1rem;
   margin: 1rem 0;
