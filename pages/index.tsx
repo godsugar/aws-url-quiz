@@ -1,5 +1,6 @@
 import type { NextPage, GetStaticProps } from 'next';
 import Head from 'next/head';
+import { useEffect } from 'react';
 import Quiz from '../components/Quiz';
 import { quizQuestions, QuizQuestion } from '../data/quizData';
 import { GITHUB_URL } from '../utils/config';
@@ -9,6 +10,23 @@ interface HomeProps {
 }
 
 const Home: NextPage<HomeProps> = ({ questions }) => {
+  // Android Chrome対応: ビューポート高さを動的設定
+  useEffect(() => {
+    const setVH = () => {
+      const vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty('--vh', `${vh}px`);
+    };
+    
+    setVH();
+    window.addEventListener('resize', setVH);
+    window.addEventListener('orientationchange', setVH);
+    
+    return () => {
+      window.removeEventListener('resize', setVH);
+      window.removeEventListener('orientationchange', setVH);
+    };
+  }, []);
+
   return (
     <div className="container">
       <Head>
@@ -17,8 +35,11 @@ const Home: NextPage<HomeProps> = ({ questions }) => {
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <link rel="alternate icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no" />
         <meta name="theme-color" content="#232F3E" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
       </Head>
 
       <main style={{ 
@@ -29,17 +50,18 @@ const Home: NextPage<HomeProps> = ({ questions }) => {
         alignItems: 'center',
         width: '100%',
         textAlign: 'center',
-        paddingTop: 'max(0.5rem, env(safe-area-inset-top))'
+        paddingTop: '0.3rem'
       }}>
-        <div style={{ marginBottom: '0.5rem', flexShrink: 0 }}>
+        <div style={{ marginBottom: '0.3rem', flexShrink: 0 }}>
           <h1 style={{ 
-            fontSize: 'clamp(1.2rem, 4vw, 1.5rem)', 
+            fontSize: 'clamp(1rem, 3.5vw, 1.4rem)', 
             color: '#ffffff', 
             textShadow: '2px 2px 4px rgba(0, 0, 0, 0.8)',
-            marginBottom: '0.3rem',
-            marginTop: '0.3rem',
+            marginBottom: '0.2rem',
+            marginTop: '0.1rem',
             letterSpacing: '1px',
-            lineHeight: '1.2'
+            lineHeight: '1.1',
+            padding: '0.1rem 0'
           }}>
             🏆 AWS URLクイズ 🏆
           </h1>
