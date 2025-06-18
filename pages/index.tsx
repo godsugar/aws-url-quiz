@@ -12,8 +12,8 @@ const Home: NextPage<HomeProps> = ({ questions }) => {
   return (
     <div className="container">
       <Head>
-        <title>AWS ドメインパターンクイズ - ミリオネア風</title>
-        <meta name="description" content="AWSの各種サービスのドメインパターン、URLの形式、独自ドメイン設定に関する知識を試すクイズミリオネア風ゲーム" />
+        <title>AWS URLクイズ</title>
+        <meta name="description" content="AWSの各種サービスのURLに関する知識を試すクイズです" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
