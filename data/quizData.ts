@@ -590,18 +590,6 @@ export const quizQuestions: QuizQuestion[] = [
     explanation: "AWS CodePipelineのコンソールページは https://console.aws.amazon.com/codepipeline/ です。"
   },
   {
-    id: 48,
-    question: "Amazon Chime SDKのドキュメントページは？",
-    options: [
-      "https://docs.aws.amazon.com/chime-sdk/",
-      "https://chime-sdk.aws.amazon.com/",
-      "https://docs.aws.amazon.com/chime/",
-      "https://sdk.chime.aws.amazon.com/"
-    ],
-    correctAnswer: 2,
-    explanation: "Amazon Chime SDKのドキュメントページは https://docs.aws.amazon.com/chime/ です。ChimeとChime SDKのドキュメントは同じセクションにあります。"
-  },
-  {
     id: 50,
     question: "Amazon Textractのコンソールページは？",
     options: [
